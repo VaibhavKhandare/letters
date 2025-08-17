@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>देवनागरी Learning Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">देवनागरी Learning Hub</h1>
+            <nav class="nav">
+                <button class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <section class="hero">
+                <h2>Master Hindi Devanagari Script</h2>
+                <p>Learn to read and write Hindi with our comprehensive lessons covering vowels, consonants, and pronunciation guides</p>
+                
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search letters, words, or lessons...">
+                    <button id="searchBtn">🔍</button>
+                </div>
+            </section>
+
+            <section class="categories">
+                <div class="category-grid">
+                    <div class="category-card" onclick="window.location.href='barakhadi.html'">
+                        <div class="category-icon">स्वर</div>
+                        <h3>Vowels (स्वर)</h3>
+                        <p>Learn all 14 Hindi vowels with detailed pronunciation guides and mouth position instructions</p>
+                        <div class="letter-preview">अ आ इ ई उ ऊ</div>
+                        <button class="explore-btn">Start Learning</button>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">व्यंजन</div>
+                        <h3>Consonants (व्यंजन)</h3>
+                        <p>Master Hindi consonants organized by pronunciation groups and articulation points</p>
+                        <div class="letter-preview">क ख ग घ च छ</div>
+                        <button class="explore-btn">Coming Soon</button>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">मात्रा</div>
+                        <h3>Vowel Marks (मात्रा)</h3>
+                        <p>Learn how vowel marks modify consonants to create different sounds</p>
+                        <div class="letter-preview">का कि की कु कू</div>
+                        <button class="explore-btn">Coming Soon</button>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">शब्द</div>
+                        <h3>Words & Practice</h3>
+                        <p>Practice reading common Hindi words and build your vocabulary</p>
+                        <div class="letter-preview">नमस्ते कैसे हो</div>
+                        <button class="explore-btn">Coming Soon</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quick-reference">
+                <h3>Quick Reference</h3>
+                <div class="reference-grid">
+                    <div class="reference-item">
+                        <h4>Vowels (स्वर)</h4>
+                        <div class="vowel-chart">
+                            <div class="vowel-row">
+                                <span>अ</span><span>आ</span><span>इ</span><span>ई</span>
+                            </div>
+                            <div class="vowel-row">
+                                <span>उ</span><span>ऊ</span><span>ए</span><span>ऐ</span>
+                            </div>
+                            <div class="vowel-row">
+                                <span>ओ</span><span>औ</span><span>अं</span><span>अः</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-item">
+                        <h4>Consonant Groups</h4>
+                        <div class="consonant-groups">
+                            <div class="group">क ख ग घ ङ</div>
+                            <div class="group">च छ ज झ ञ</div>
+                            <div class="group">ट ठ ड ढ ण</div>
+                            <div class="group">त थ द ध न</div>
+                            <div class="group">प फ ब भ म</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 देवनागरी Learning Hub. Made with ❤️ for Hindi learners.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
