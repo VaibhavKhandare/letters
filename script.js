@@ -308,7 +308,7 @@ function generateCategoryCards() {
         card.className = 'category-card';
         card.setAttribute('data-category', category.id);
         
-        const isAvailable = category.id === 'vowels'; // Only vowels are fully implemented
+        const isAvailable = category.id === 'vowels' || category.id === 'pa_varga'; // Vowels and Pa Varga implemented
         const buttonText = isAvailable ? 'Start Learning →' : 'Coming Soon';
         const buttonDisabled = isAvailable ? '' : 'disabled';
         const clickHandler = isAvailable ? `onclick="window.location.href='${category.url}'"` : '';
