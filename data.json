@@ -1,0 +1,659 @@
+{
+  "vowels": {
+    "title": "Barakhadi - Hindi Vowels (स्वर)",
+    "description": "Master all 14 Hindi vowels with detailed pronunciation guides",
+    "lessons": [
+      {
+        "id": 1,
+        "letter": "अ",
+        "romanization": "a",
+        "soundDescription": "\"u\" in \"but\"",
+        "mouthPosition": {
+          "tongue": "Neutral, flat, middle - not touching roof of mouth",
+          "lips": "Neutral - not rounded, not spread",
+          "jaw": "Relaxed, slightly open (1-2 finger widths)",
+          "throat": "Open, vocal cords vibrate"
+        },
+        "practiceWords": [
+          {"hindi": "अब", "romanization": "ab", "meaning": "now"},
+          {"hindi": "अगर", "romanization": "agar", "meaning": "if"}
+        ],
+        "keyPoints": [
+          "Most neutral vowel sound in Hindi",
+          "Short duration (unlike आ)",
+          "No tension in any part of mouth",
+          "Like the 'u' in British \"but\""
+        ],
+        "audioFreq": {"f1": 730, "f2": 1090}
+      },
+      {
+        "id": 2,
+        "letter": "आ",
+        "romanization": "aa",
+        "soundDescription": "\"a\" in \"father\"",
+        "mouthPosition": {
+          "tongue": "Low, pulled back",
+          "lips": "Neutral, wide opening",
+          "jaw": "Wide open (maximum opening)",
+          "duration": "Long vowel (twice as long as अ)"
+        },
+        "practiceWords": [
+          {"hindi": "आम", "romanization": "aam", "meaning": "mango"},
+          {"hindi": "आप", "romanization": "aap", "meaning": "you"}
+        ],
+        "keyPoints": [
+          "Long vowel - hold for twice the duration of अ",
+          "Maximum jaw opening",
+          "Clear, open sound",
+          "Very common in Hindi words"
+        ],
+        "audioFreq": {"f1": 1000, "f2": 1400}
+      },
+      {
+        "id": 3,
+        "letter": "इ",
+        "romanization": "i",
+        "soundDescription": "\"i\" in \"bit\"",
+        "mouthPosition": {
+          "tongue": "Front high position",
+          "lips": "Spread (slight smile)",
+          "jaw": "Nearly closed",
+          "feature": "Front + high tongue position"
+        },
+        "practiceWords": [
+          {"hindi": "इस", "romanization": "is", "meaning": "this"},
+          {"hindi": "किताब", "romanization": "kitaab", "meaning": "book"}
+        ],
+        "keyPoints": [
+          "Tongue moves to front-high position",
+          "Natural slight smile with lips",
+          "Short vowel duration",
+          "Clear, crisp sound"
+        ],
+        "audioFreq": {"f1": 270, "f2": 2290}
+      },
+      {
+        "id": 4,
+        "letter": "ई",
+        "romanization": "ii",
+        "soundDescription": "\"ee\" in \"see\"",
+        "mouthPosition": {
+          "tongue": "Front very high",
+          "lips": "More spread than इ",
+          "jaw": "Minimal opening",
+          "feature": "Tense + long"
+        },
+        "practiceWords": [
+          {"hindi": "ईद", "romanization": "eed", "meaning": "festival"},
+          {"hindi": "नीम", "romanization": "neem", "meaning": "neem tree"}
+        ],
+        "keyPoints": [
+          "Longer version of इ",
+          "Higher tongue position",
+          "More lip spreading",
+          "Tense, precise articulation"
+        ],
+        "audioFreq": {"f1": 390, "f2": 1990}
+      },
+      {
+        "id": 5,
+        "letter": "उ",
+        "romanization": "u",
+        "soundDescription": "\"u\" in \"put\"",
+        "mouthPosition": {
+          "tongue": "Back high",
+          "lips": "Rounded",
+          "jaw": "Nearly closed",
+          "feature": "Back + round"
+        },
+        "practiceWords": [
+          {"hindi": "उस", "romanization": "us", "meaning": "that"},
+          {"hindi": "सुन", "romanization": "sun", "meaning": "listen"}
+        ],
+        "keyPoints": [
+          "Back tongue position",
+          "Lip rounding essential",
+          "Short vowel",
+          "Like 'u' in \"put\" not \"cut\""
+        ],
+        "audioFreq": {"f1": 440, "f2": 1020}
+      },
+      {
+        "id": 6,
+        "letter": "ऊ",
+        "romanization": "uu",
+        "soundDescription": "\"oo\" in \"pool\"",
+        "mouthPosition": {
+          "tongue": "Back very high",
+          "lips": "Tight round",
+          "jaw": "Minimal opening",
+          "feature": "Maximum rounding"
+        },
+        "practiceWords": [
+          {"hindi": "ऊन", "romanization": "oon", "meaning": "wool"},
+          {"hindi": "सूर्य", "romanization": "soorya", "meaning": "sun"}
+        ],
+        "keyPoints": [
+          "Longer version of उ",
+          "Maximum lip rounding",
+          "Very high back tongue",
+          "Like 'oo' in \"pool\""
+        ],
+        "audioFreq": {"f1": 300, "f2": 870}
+      },
+      {
+        "id": 7,
+        "letter": "ए",
+        "romanization": "e",
+        "soundDescription": "\"ay\" in \"day\"",
+        "mouthPosition": {
+          "tongue": "Front mid-high",
+          "lips": "Slight spread",
+          "jaw": "Medium opening",
+          "feature": "Slight glide"
+        },
+        "practiceWords": [
+          {"hindi": "एक", "romanization": "ek", "meaning": "one"},
+          {"hindi": "केला", "romanization": "kela", "meaning": "banana"}
+        ],
+        "keyPoints": [
+          "Mid-front tongue position",
+          "Slight diphthong quality",
+          "Between इ and आ positions",
+          "Like 'ay' in \"day\""
+        ],
+        "audioFreq": {"f1": 530, "f2": 1840}
+      },
+      {
+        "id": 8,
+        "letter": "ऐ",
+        "romanization": "ai",
+        "soundDescription": "\"i\" in \"ice\"",
+        "mouthPosition": {
+          "tongueStart": "Low front (आ)",
+          "tongueEnd": "High front (इ)",
+          "lipMovement": "Neutral → Spread",
+          "feature": "Full glide vowel"
+        },
+        "practiceWords": [
+          {"hindi": "ऐसा", "romanization": "aisa", "meaning": "like this"},
+          {"hindi": "कैसा", "romanization": "kaisa", "meaning": "how"}
+        ],
+        "keyPoints": [
+          "True diphthong - two vowel sounds",
+          "Starts like आ, ends like इ",
+          "Clear gliding movement",
+          "Like 'i' in \"ice\""
+        ],
+        "audioFreq": {"f1": 660, "f2": 1720}
+      },
+      {
+        "id": 9,
+        "letter": "ओ",
+        "romanization": "o",
+        "soundDescription": "\"o\" in \"go\"",
+        "mouthPosition": {
+          "tongue": "Back mid-high",
+          "lips": "Medium round",
+          "jaw": "Medium opening",
+          "feature": "Medium rounding"
+        },
+        "practiceWords": [
+          {"hindi": "और", "romanization": "aur", "meaning": "and"},
+          {"hindi": "कोई", "romanization": "koi", "meaning": "someone"}
+        ],
+        "keyPoints": [
+          "Mid-back tongue position",
+          "Moderate lip rounding",
+          "Between उ and आ",
+          "Like 'o' in \"go\""
+        ],
+        "audioFreq": {"f1": 570, "f2": 840}
+      },
+      {
+        "id": 10,
+        "letter": "औ",
+        "romanization": "au",
+        "soundDescription": "\"ou\" in \"out\"",
+        "mouthPosition": {
+          "tongueStart": "Low back (आ)",
+          "tongueEnd": "High back (उ)",
+          "lipMovement": "Neutral → Round",
+          "feature": "Full glide vowel"
+        },
+        "practiceWords": [
+          {"hindi": "और", "romanization": "aur", "meaning": "and"},
+          {"hindi": "कौन", "romanization": "kaun", "meaning": "who"}
+        ],
+        "keyPoints": [
+          "True diphthong - two vowel sounds",
+          "Starts like आ, ends like उ",
+          "Clear lip rounding movement",
+          "Like 'ou' in \"out\""
+        ],
+        "audioFreq": {"f1": 850, "f2": 1610}
+      },
+      {
+        "id": 11,
+        "letter": "अं",
+        "romanization": "aṃ",
+        "soundDescription": "Nasalized vowel",
+        "mouthPosition": {
+          "tongue": "Same as base vowel (अ)",
+          "lips": "Same as base vowel",
+          "specialAction": "Lower soft palate, air through nose",
+          "feature": "Anusvara - adds nasalization"
+        },
+        "practiceWords": [
+          {"hindi": "संस्कार", "romanization": "sanskaar", "meaning": "culture"},
+          {"hindi": "अंगूर", "romanization": "angoor", "meaning": "grapes"}
+        ],
+        "keyPoints": [
+          "Add nasal quality to any vowel",
+          "Air flows through nose",
+          "Soft palate lowered",
+          "Like humming with vowel"
+        ],
+        "audioFreq": {"f1": 730, "f2": 1090, "nasal": true}
+      },
+      {
+        "id": 12,
+        "letter": "अः",
+        "romanization": "aḥ",
+        "soundDescription": "Breathy vowel",
+        "mouthPosition": {
+          "tongue": "Same as base vowel (अ)",
+          "lips": "Same as base vowel",
+          "specialAction": "Voiceless puff after vowel",
+          "feature": "Visarga - adds breathiness"
+        },
+        "practiceWords": [
+          {"hindi": "नमः", "romanization": "namaḥ", "meaning": "salutations"},
+          {"hindi": "स्वतः", "romanization": "svataḥ", "meaning": "automatically"}
+        ],
+        "keyPoints": [
+          "Add breathy quality after vowel",
+          "Like a small 'h' sound",
+          "Voiceless puff of air",
+          "Common in Sanskrit words"
+        ],
+        "audioFreq": {"f1": 730, "f2": 1090, "breathy": true}
+      }
+    ]
+  },
+  "consonants": {
+    "ka_varga": {
+      "title": "Ka Varga (क वर्ग) - Velar Consonants",
+      "description": "Consonants made with the back of the tongue touching the soft palate",
+      "articulationPlace": "Velar (soft palate)",
+      "lessons": [
+        {
+          "id": 13,
+          "letter": "क",
+          "romanization": "ka",
+          "soundDescription": "Voiceless velar stop",
+          "mouthPosition": {
+            "tongue": "Back part raises to soft palate, firm contact",
+            "lips": "Neutral and relaxed",
+            "jaw": "Slightly dropped, teeth apart",
+            "airFlow": "Build pressure, sudden release, no aspiration",
+            "vocalCords": "Not vibrating (voiceless)"
+          },
+          "practiceWords": [
+            {"hindi": "काम", "romanization": "kaam", "meaning": "work"},
+            {"hindi": "कल", "romanization": "kal", "meaning": "yesterday/tomorrow"}
+          ],
+          "keyPoints": [
+            "Back of tongue touches soft palate",
+            "No aspiration - quick release",
+            "Like 'k' in \"skip\" not \"kite\"",
+            "Keep tongue tip relaxed behind lower teeth"
+          ],
+          "commonMistakes": [
+            "Using tongue tip instead of back",
+            "Adding too much breath (aspiration)",
+            "Making contact too far forward"
+          ]
+        },
+        {
+          "id": 14,
+          "letter": "ख",
+          "romanization": "kha",
+          "soundDescription": "Aspirated voiceless velar stop",
+          "mouthPosition": {
+            "tongue": "Same position as क",
+            "lips": "Neutral",
+            "jaw": "Same as क",
+            "airFlow": "Strong puff of air after release",
+            "vocalCords": "Not vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "खाना", "romanization": "khaana", "meaning": "food"},
+            {"hindi": "खुश", "romanization": "khush", "meaning": "happy"}
+          ],
+          "keyPoints": [
+            "Same position as क but with aspiration",
+            "Strong puff of air after release",
+            "Like 'k' in \"kite\" or \"key\"",
+            "Paper should flutter if held near mouth"
+          ]
+        }
+      ]
+    },
+    "cha_varga": {
+      "title": "Cha Varga (च वर्ग) - Palatal Consonants",
+      "description": "Consonants made with the middle of the tongue touching the hard palate",
+      "articulationPlace": "Palatal (hard palate)",
+      "lessons": [
+        {
+          "id": 15,
+          "letter": "च",
+          "romanization": "cha",
+          "soundDescription": "Voiceless palatal stop",
+          "mouthPosition": {
+            "tongue": "Middle part touches hard palate",
+            "lips": "Neutral",
+            "jaw": "Slightly open",
+            "airFlow": "Clean release, no aspiration",
+            "vocalCords": "Not vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "चाय", "romanization": "chaay", "meaning": "tea"},
+            {"hindi": "चार", "romanization": "chaar", "meaning": "four"}
+          ],
+          "keyPoints": [
+            "Middle tongue touches hard palate",
+            "More forward than क",
+            "Clean, crisp sound",
+            "No aspiration"
+          ]
+        }
+      ]
+    },
+    "ta_varga_retroflex": {
+      "title": "Ta Varga - Retroflex (ट वर्ग)",
+      "description": "Consonants made with the tongue tip curled back to touch the roof of mouth",
+      "articulationPlace": "Retroflex (roof of mouth)",
+      "lessons": [
+        {
+          "id": 16,
+          "letter": "ट",
+          "romanization": "ṭa",
+          "soundDescription": "Voiceless retroflex stop",
+          "mouthPosition": {
+            "tongue": "Tip curls back to touch roof of mouth",
+            "lips": "Neutral",
+            "jaw": "Open",
+            "airFlow": "Clean release from roof",
+            "vocalCords": "Not vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "टमाटर", "romanization": "ṭamaṭar", "meaning": "tomato"},
+            {"hindi": "पेट", "romanization": "peṭ", "meaning": "stomach"}
+          ],
+          "keyPoints": [
+            "Tongue tip curls back",
+            "Contact with roof of mouth",
+            "Distinct from dental त",
+            "More 'hollow' sound"
+          ]
+        }
+      ]
+    },
+    "ta_varga_dental": {
+      "title": "Ta Varga - Dental (त वर्ग)",
+      "description": "Consonants made with the tongue tip touching the teeth",
+      "articulationPlace": "Dental (teeth)",
+      "lessons": [
+        {
+          "id": 17,
+          "letter": "त",
+          "romanization": "ta",
+          "soundDescription": "Voiceless dental stop",
+          "mouthPosition": {
+            "tongue": "Tip touches upper teeth",
+            "lips": "Neutral",
+            "jaw": "Open",
+            "airFlow": "Release from teeth contact",
+            "vocalCords": "Not vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "ताला", "romanization": "taala", "meaning": "lock"},
+            {"hindi": "मित्र", "romanization": "mitra", "meaning": "friend"}
+          ],
+          "keyPoints": [
+            "Tongue tip touches teeth",
+            "More forward than ट",
+            "Sharper sound than ट",
+            "Common in Hindi words"
+          ]
+        }
+      ]
+    },
+    "pa_varga": {
+      "title": "Pa Varga (प वर्ग) - Labial Consonants",
+      "description": "Consonants made with the lips",
+      "articulationPlace": "Bilabial (both lips)",
+      "lessons": [
+        {
+          "id": 18,
+          "letter": "प",
+          "romanization": "pa",
+          "soundDescription": "Voiceless bilabial stop",
+          "mouthPosition": {
+            "tongue": "Completely relaxed, not involved",
+            "lips": "Both lips come together, complete closure",
+            "jaw": "Relaxed and neutral",
+            "airFlow": "Air builds behind lips, quick release, no aspiration",
+            "vocalCords": "Not vibrating (voiceless)"
+          },
+          "practiceWords": [
+            {"hindi": "पानी", "romanization": "paanii", "meaning": "water"},
+            {"hindi": "पाँच", "romanization": "paanch", "meaning": "five"}
+          ],
+          "keyPoints": [
+            "Easiest consonant - just close lips",
+            "No tongue position needed",
+            "Like 'p' in \"spin\" not \"pin\"",
+            "No breath puff (unaspirated)"
+          ],
+          "commonMistakes": [
+            "Adding aspiration (breath puff)",
+            "Making lips too tense",
+            "Unclear lip closure"
+          ]
+        },
+        {
+          "id": 19,
+          "letter": "फ",
+          "romanization": "pha",
+          "soundDescription": "Aspirated voiceless bilabial stop",
+          "mouthPosition": {
+            "tongue": "Relaxed",
+            "lips": "Same closure as प",
+            "jaw": "Neutral",
+            "airFlow": "Strong puff of air after release",
+            "vocalCords": "Not vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "फल", "romanization": "phal", "meaning": "fruit"},
+            {"hindi": "फूल", "romanization": "phool", "meaning": "flower"}
+          ],
+          "keyPoints": [
+            "Same lip position as प",
+            "Strong aspiration after release",
+            "Like 'p' in \"pin\" or \"phone\"",
+            "Paper should flutter"
+          ]
+        }
+      ]
+    },
+    "ya_ra_la_va": {
+      "title": "Approximants (य र ल व श)",
+      "description": "Semi-vowels and fricatives",
+      "lessons": [
+        {
+          "id": 20,
+          "letter": "य",
+          "romanization": "ya",
+          "soundDescription": "Palatal approximant",
+          "mouthPosition": {
+            "tongue": "Middle approaches hard palate (doesn't touch)",
+            "lips": "Neutral",
+            "jaw": "Slightly open",
+            "airFlow": "Smooth flow, no blockage",
+            "vocalCords": "Vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "यह", "romanization": "yah", "meaning": "this"},
+            {"hindi": "योग", "romanization": "yoga", "meaning": "yoga"}
+          ],
+          "keyPoints": [
+            "Like English 'y' in \"yes\"",
+            "No complete closure",
+            "Smooth gliding sound",
+            "Often starts syllables"
+          ]
+        },
+        {
+          "id": 21,
+          "letter": "र",
+          "romanization": "ra",
+          "soundDescription": "Alveolar trill",
+          "mouthPosition": {
+            "tongue": "Tip vibrates against alveolar ridge",
+            "lips": "Neutral",
+            "jaw": "Open",
+            "airFlow": "Causes tongue vibration",
+            "vocalCords": "Vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "राम", "romanization": "raam", "meaning": "Ram"},
+            {"hindi": "गर्म", "romanization": "garm", "meaning": "hot"}
+          ],
+          "keyPoints": [
+            "Tongue tip vibrates (trill)",
+            "Different from English 'r'",
+            "Light, quick vibration",
+            "Very common in Hindi"
+          ]
+        }
+      ]
+    }
+  },
+  "specialCharacters": {
+    "title": "Special Characters and Compounds",
+    "lessons": [
+      {
+        "id": 22,
+        "letter": "क्ष",
+        "romanization": "kṣa",
+        "soundDescription": "Compound: क + ष",
+        "type": "compound",
+        "components": ["क", "ष"],
+        "practiceWords": [
+          {"hindi": "क्षमा", "romanization": "kṣamaa", "meaning": "forgiveness"},
+          {"hindi": "दक्षिण", "romanization": "dakṣiṇa", "meaning": "south"}
+        ]
+      },
+      {
+        "id": 23,
+        "letter": "त्र",
+        "romanization": "tra",
+        "soundDescription": "Compound: त + र",
+        "type": "compound",
+        "components": ["त", "र"],
+        "practiceWords": [
+          {"hindi": "त्रिशूल", "romanization": "trishool", "meaning": "trident"},
+          {"hindi": "मित्र", "romanization": "mitra", "meaning": "friend"}
+        ]
+      },
+      {
+        "id": 24,
+        "letter": "ज्ञ",
+        "romanization": "gya",
+        "soundDescription": "Compound: ज + ञ",
+        "type": "compound",
+        "components": ["ज", "ञ"],
+        "practiceWords": [
+          {"hindi": "ज्ञान", "romanization": "gyaan", "meaning": "knowledge"},
+          {"hindi": "यज्ञ", "romanization": "yagya", "meaning": "sacrifice"}
+        ]
+      }
+    ]
+  },
+  "categories": [
+    {
+      "id": "vowels",
+      "title": "Barakhadi - Vowels (स्वर)",
+      "icon": "स्वर",
+      "description": "Master all 14 Hindi vowels with detailed pronunciation guides and mouth position instructions.",
+      "preview": "अ आ इ ई उ ऊ ए ऐ ओ औ अं अः",
+      "lessonCount": 12,
+      "url": "barakhadi.html"
+    },
+    {
+      "id": "ka_varga",
+      "title": "Ka Varga (क वर्ग)",
+      "icon": "क्व",
+      "description": "Learn velar consonants made with the back of the tongue.",
+      "preview": "क ख ग घ ङ",
+      "lessonCount": 5,
+      "url": "ka-varga.html"
+    },
+    {
+      "id": "cha_varga", 
+      "title": "Cha Varga (च वर्ग)",
+      "icon": "च्व",
+      "description": "Master palatal consonants made with the middle tongue.",
+      "preview": "च छ ज झ ञ",
+      "lessonCount": 5,
+      "url": "cha-varga.html"
+    },
+    {
+      "id": "ta_varga_retroflex",
+      "title": "Ta Varga - Retroflex (ट वर्ग)",
+      "icon": "ट्व", 
+      "description": "Learn retroflex consonants with curled tongue tip.",
+      "preview": "ट ठ ड ढ ण",
+      "lessonCount": 5,
+      "url": "ta-varga-retroflex.html"
+    },
+    {
+      "id": "ta_varga_dental",
+      "title": "Ta Varga - Dental (त वर्ग)",
+      "icon": "त्व",
+      "description": "Master dental consonants made with tongue tip at teeth.",
+      "preview": "त थ द ध न",
+      "lessonCount": 5,
+      "url": "ta-varga-dental.html"
+    },
+    {
+      "id": "pa_varga",
+      "title": "Pa Varga (प वर्ग)",
+      "icon": "प्व",
+      "description": "Learn labial consonants made with the lips - the easiest series!",
+      "preview": "प फ ब भ म",
+      "lessonCount": 5,
+      "url": "pa-varga.html"
+    },
+    {
+      "id": "approximants",
+      "title": "Semi-vowels & Fricatives",
+      "icon": "य्र",
+      "description": "Master approximants and special consonants.",
+      "preview": "य र ल व श ष स ह",
+      "lessonCount": 8,
+      "url": "approximants.html"
+    },
+    {
+      "id": "compounds",
+      "title": "Compound Letters",
+      "icon": "क्ष",
+      "description": "Learn special compound characters and conjuncts.",
+      "preview": "क्ष त्र ज्ञ",
+      "lessonCount": 3,
+      "url": "compounds.html"
+    }
+  ]
+}

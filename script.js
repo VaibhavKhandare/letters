@@ -110,8 +110,11 @@ const categoryMapping = {
 // DOM elements
 const searchInput = document.getElementById('searchInput');
 const searchBtn = document.getElementById('searchBtn');
-const categoryCards = document.querySelectorAll('.category-card');
+const categoryGrid = document.getElementById('categoryGrid');
 const main = document.querySelector('.main .container');
+
+// Global data store
+let websiteData = null;
 
 // Search functionality
 function performSearch(query) {
@@ -232,39 +235,7 @@ function navigateToCategory(category) {
     }
 }
 
-// Event listeners
-searchBtn.addEventListener('click', () => {
-    performSearch(searchInput.value);
-});
-
-searchInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        performSearch(searchInput.value);
-    }
-});
-
-searchInput.addEventListener('input', (e) => {
-    if (e.target.value.trim() === '') {
-        hideSearchResults();
-    }
-});
-
-// Category card navigation
-categoryCards.forEach(card => {
-    const exploreBtn = card.querySelector('.explore-btn');
-    const category = card.dataset.category;
-    
-    exploreBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        navigateToCategory(category);
-        // In a full implementation, this would navigate to the category page
-        showCategoryContent(category);
-    });
-    
-    card.addEventListener('click', () => {
-        showCategoryContent(category);
-    });
-});
+// Event listeners are now handled in setupEventListeners() function
 
 function showCategoryContent(category) {
     // Show category-specific content
@@ -314,19 +285,101 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// Load website data and initialize page
+async function loadWebsiteData() {
+    try {
+        const response = await fetch('data.json');
+        websiteData = await response.json();
+        generateCategoryCards();
+        setupEventListeners();
+    } catch (error) {
+        console.error('Error loading website data:', error);
+        generateFallbackCategories();
+    }
+}
+
+function generateCategoryCards() {
+    if (!websiteData || !websiteData.categories) return;
+    
+    categoryGrid.innerHTML = '';
+    
+    websiteData.categories.forEach((category, index) => {
+        const card = document.createElement('div');
+        card.className = 'category-card';
+        card.setAttribute('data-category', category.id);
+        
+        const isAvailable = category.id === 'vowels'; // Only vowels are fully implemented
+        const buttonText = isAvailable ? 'Start Learning →' : 'Coming Soon';
+        const buttonDisabled = isAvailable ? '' : 'disabled';
+        const clickHandler = isAvailable ? `onclick="window.location.href='${category.url}'"` : '';
+        
+        card.innerHTML = `
+            <div class="category-icon">${category.icon}</div>
+            <h3>${category.title}</h3>
+            <p>${category.description}</p>
+            <div class="letter-preview">${category.preview}</div>
+            <button class="explore-btn" ${buttonDisabled} ${clickHandler}>${buttonText}</button>
+        `;
+        
+        categoryGrid.appendChild(card);
+        
+        // Add fade-in animation with delay
+        setTimeout(() => {
+            card.classList.add('fade-in');
+        }, index * 100);
+    });
+}
+
+function generateFallbackCategories() {
+    categoryGrid.innerHTML = `
+        <div class="category-card" onclick="window.location.href='barakhadi.html'">
+            <div class="category-icon">स्वर</div>
+            <h3>Barakhadi - Vowels</h3>
+            <p>Master all 14 Hindi vowels with detailed pronunciation guides and mouth position instructions.</p>
+            <div class="letter-preview">अ आ इ ई उ ऊ ए ऐ ओ औ अं अः</div>
+            <button class="explore-btn">Start Learning →</button>
+        </div>
+        <div class="category-card">
+            <div class="category-icon">व्यञ्जन</div>
+            <h3>Consonants (Coming Soon)</h3>
+            <p>Learn all Hindi consonants with their various combinations and pronunciation patterns.</p>
+            <div class="letter-preview">क ख ग घ ङ च छ ज झ ञ</div>
+            <button class="explore-btn" disabled>Coming Soon</button>
+        </div>
+    `;
+}
+
+function setupEventListeners() {
+    // Search functionality
+    if (searchBtn) {
+        searchBtn.addEventListener('click', () => {
+            performSearch(searchInput.value);
+        });
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch(searchInput.value);
+            }
+        });
+
+        searchInput.addEventListener('input', (e) => {
+            if (e.target.value.trim() === '') {
+                hideSearchResults();
+            }
+        });
+    }
+}
+
 // Initialize page
 document.addEventListener('DOMContentLoaded', () => {
-    // Add fade-in animation to cards
-    setTimeout(() => {
-        categoryCards.forEach((card, index) => {
-            setTimeout(() => {
-                card.classList.add('fade-in');
-            }, index * 100);
-        });
-    }, 500);
+    loadWebsiteData();
     
-    // Focus search input on page load
-    searchInput.focus();
+    // Focus search input on page load if it exists
+    if (searchInput) {
+        setTimeout(() => searchInput.focus(), 500);
+    }
 });
 
 // Keyboard navigation
