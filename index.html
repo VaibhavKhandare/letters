@@ -19,11 +19,79 @@
             <section class="hero">
                 <h2>Master Hindi Devanagari Script</h2>
                 <p>Learn to read and pronounce Hindi letters with interactive lessons, audio guides, and practice exercises.</p>
+                
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search letters (अ, ka, vowel...)">
+                    <button id="searchBtn">🔍</button>
+                </div>
             </section>
 
             <section class="categories">
                 <div class="category-grid" id="categoryGrid">
-                    <!-- Categories will be dynamically loaded from data.json -->
+                    <!-- Loading fallback content -->
+                    <div class="category-card" onclick="window.location.href='barakhadi.html'">
+                        <div class="category-icon">स्वर</div>
+                        <h3>Barakhadi - Vowels</h3>
+                        <p>Master all 14 Hindi vowels with detailed pronunciation guides and mouth position instructions.</p>
+                        <div class="letter-preview">अ आ इ ई उ ऊ ए ऐ ओ औ अं अः</div>
+                        <button class="explore-btn">Start Learning →</button>
+                    </div>
+
+                    <div class="category-card" onclick="window.location.href='pa-varga.html'">
+                        <div class="category-icon">प्व</div>
+                        <h3>Pa Varga (प वर्ग)</h3>
+                        <p>Learn labial consonants made with the lips - the easiest series!</p>
+                        <div class="letter-preview">प फ ब भ म</div>
+                        <button class="explore-btn">Start Learning →</button>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">क्व</div>
+                        <h3>Ka Varga (Coming Soon)</h3>
+                        <p>Learn velar consonants made with the back of the tongue.</p>
+                        <div class="letter-preview">क ख ग घ ङ</div>
+                        <button class="explore-btn" disabled>Coming Soon</button>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">च्व</div>
+                        <h3>Cha Varga (Coming Soon)</h3>
+                        <p>Master palatal consonants made with the middle tongue.</p>
+                        <div class="letter-preview">च छ ज झ ञ</div>
+                        <button class="explore-btn" disabled>Coming Soon</button>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">ट्व</div>
+                        <h3>Ta Varga - Retroflex (Coming Soon)</h3>
+                        <p>Learn retroflex consonants with curled tongue tip.</p>
+                        <div class="letter-preview">ट ठ ड ढ ण</div>
+                        <button class="explore-btn" disabled>Coming Soon</button>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">त्व</div>
+                        <h3>Ta Varga - Dental (Coming Soon)</h3>
+                        <p>Master dental consonants made with tongue tip at teeth.</p>
+                        <div class="letter-preview">त थ द ध न</div>
+                        <button class="explore-btn" disabled>Coming Soon</button>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">य्र</div>
+                        <h3>Semi-vowels & Fricatives (Coming Soon)</h3>
+                        <p>Master approximants and special consonants.</p>
+                        <div class="letter-preview">य र ल व श ष स ह</div>
+                        <button class="explore-btn" disabled>Coming Soon</button>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">क्ष</div>
+                        <h3>Compound Letters (Coming Soon)</h3>
+                        <p>Learn special compound characters and conjuncts.</p>
+                        <div class="letter-preview">क्ष त्र ज्ञ</div>
+                        <button class="explore-btn" disabled>Coming Soon</button>
+                    </div>
                 </div>
             </section>
 

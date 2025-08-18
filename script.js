@@ -301,7 +301,13 @@ async function loadWebsiteData() {
 function generateCategoryCards() {
     if (!websiteData || !websiteData.categories) return;
     
-    categoryGrid.innerHTML = '';
+    // Only replace if the grid is empty or has placeholder content
+    if (categoryGrid.children.length === 0 || categoryGrid.innerHTML.includes('Loading fallback')) {
+        categoryGrid.innerHTML = '';
+    } else {
+        // Content already exists, enhance it instead
+        return;
+    }
     
     websiteData.categories.forEach((category, index) => {
         const card = document.createElement('div');

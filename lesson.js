@@ -39,17 +39,20 @@ class LessonNavigator {
     }
 
     generateAllLessons() {
-        this.lessonContent.innerHTML = '';
-        
-        // Generate regular vowel lessons
-        this.lessonData.lessons.forEach((lesson, index) => {
-            const slideElement = this.createLessonSlide(lesson, index === 0);
-            this.lessonContent.appendChild(slideElement);
-        });
+        // Only clear if we have valid lesson data and current content is placeholder
+        if (this.lessonData && this.lessonData.lessons && this.lessonData.lessons.length > 1) {
+            this.lessonContent.innerHTML = '';
+            
+            // Generate regular vowel lessons
+            this.lessonData.lessons.forEach((lesson, index) => {
+                const slideElement = this.createLessonSlide(lesson, index === 0);
+                this.lessonContent.appendChild(slideElement);
+            });
 
-        // Add summary slide
-        const summarySlide = this.createSummarySlide();
-        this.lessonContent.appendChild(summarySlide);
+            // Add summary slide
+            const summarySlide = this.createSummarySlide();
+            this.lessonContent.appendChild(summarySlide);
+        }
     }
 
     createLessonSlide(lesson, isActive = false) {
