@@ -91,6 +91,26 @@ const contentDatabase = {
             { letter: "इंदिरा", romanization: "Indira", description: "Female name meaning beauty", category: "names" },
             { letter: "समीक्षा", romanization: "Samiksha", description: "Female name meaning analysis", category: "names" }
         ]
+    },
+    combinations: {
+        title: "Consonant-Vowel Combinations",
+        items: [
+            { letter: "का", romanization: "kaa", description: "Ka with long A vowel", category: "combinations" },
+            { letter: "कि", romanization: "ki", description: "Ka with short I vowel", category: "combinations" },
+            { letter: "की", romanization: "kii", description: "Ka with long I vowel", category: "combinations" },
+            { letter: "कु", romanization: "ku", description: "Ka with short U vowel", category: "combinations" },
+            { letter: "कू", romanization: "kuu", description: "Ka with long U vowel", category: "combinations" },
+            { letter: "के", romanization: "ke", description: "Ka with E vowel", category: "combinations" },
+            { letter: "कै", romanization: "kai", description: "Ka with AI vowel", category: "combinations" },
+            { letter: "को", romanization: "ko", description: "Ka with O vowel", category: "combinations" },
+            { letter: "कौ", romanization: "kau", description: "Ka with AU vowel", category: "combinations" },
+            { letter: "पा", romanization: "paa", description: "Pa with long A vowel", category: "combinations" },
+            { letter: "पि", romanization: "pi", description: "Pa with short I vowel", category: "combinations" },
+            { letter: "पी", romanization: "pii", description: "Pa with long I vowel", category: "combinations" },
+            { letter: "मा", romanization: "maa", description: "Ma with long A vowel", category: "combinations" },
+            { letter: "मि", romanization: "mi", description: "Ma with short I vowel", category: "combinations" },
+            { letter: "मी", romanization: "mii", description: "Ma with long I vowel", category: "combinations" }
+        ]
     }
 };
 
@@ -104,7 +124,8 @@ const categoryMapping = {
     'pa-fa': ['pa_varga'],
     'ya-ra-la-va-sha': ['others'],
     'kshya-sa-ha': ['others'],
-    'names': ['names']
+    'names': ['names'],
+    'combinations': ['combinations']
 };
 
 // DOM elements
@@ -301,20 +322,15 @@ async function loadWebsiteData() {
 function generateCategoryCards() {
     if (!websiteData || !websiteData.categories) return;
     
-    // Only replace if the grid is empty or has placeholder content
-    if (categoryGrid.children.length === 0 || categoryGrid.innerHTML.includes('Loading fallback')) {
-        categoryGrid.innerHTML = '';
-    } else {
-        // Content already exists, enhance it instead
-        return;
-    }
+    // Always replace content with dynamic data
+    categoryGrid.innerHTML = '';
     
     websiteData.categories.forEach((category, index) => {
         const card = document.createElement('div');
         card.className = 'category-card';
         card.setAttribute('data-category', category.id);
         
-        const isAvailable = category.id === 'vowels' || category.id === 'pa_varga'; // Vowels and Pa Varga implemented
+        const isAvailable = true; // All categories now available with complete data
         const buttonText = isAvailable ? 'Start Learning →' : 'Coming Soon';
         const buttonDisabled = isAvailable ? '' : 'disabled';
         const clickHandler = isAvailable ? `onclick="window.location.href='${category.url}'"` : '';

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cha Varga - Palatal Consonants | Devanagari Learning Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lesson.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo"><a href="index.html" style="color: white; text-decoration: none;">देवनागरी Learning Hub</a></h1>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">← Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="lesson-header">
+                <h1>Cha Varga - Palatal Consonants (च वर्ग)</h1>
+                <p class="lesson-subtitle">Master consonants made with the middle of the tongue touching the hard palate</p>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%"></div>
+            </div>
+
+            <nav class="lesson-nav">
+                <button class="nav-btn" id="prevBtn" disabled>← Previous</button>
+                <span class="lesson-counter">1 of 5</span>
+                <button class="nav-btn" id="nextBtn">Next →</button>
+            </nav>
+
+            <div class="lesson-content" id="lessonContent">
+                <!-- Lessons will be dynamically loaded from data.json -->
+            </div>
+
+            <div class="lesson-footer">
+                <button class="action-btn" id="playAudio">🔊 Play Audio</button>
+                <button class="action-btn" id="testYourself">📝 Test Yourself</button>
+                <button class="action-btn" id="markComplete">✓ Mark Complete</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Cha Varga Lesson Navigator - use the same system as Ka Varga
+        class ChaVargaLessonNavigator {
+            constructor() {
+                this.vargaName = 'cha_varga';
+                this.currentLesson = 1;
+                this.totalLessons = 5;
+                this.completed = JSON.parse(localStorage.getItem(`completed_${this.vargaName}`) || '[]');
+                this.lessonData = null;
+                
+                this.initializeElements();
+                this.setupEventListeners();
+                this.loadLessonData();
+            }
+
+            initializeElements() {
+                this.prevBtn = document.getElementById('prevBtn');
+                this.nextBtn = document.getElementById('nextBtn');
+                this.lessonCounter = document.querySelector('.lesson-counter');
+                this.progressFill = document.querySelector('.progress-fill');
+                this.lessonContent = document.getElementById('lessonContent');
+                this.playAudioBtn = document.getElementById('playAudio');
+                this.testBtn = document.getElementById('testYourself');
+                this.markCompleteBtn = document.getElementById('markComplete');
+            }
+
+            async loadLessonData() {
+                try {
+                    const response = await fetch('data.json');
+                    const data = await response.json();
+                    this.lessonData = data.consonants[this.vargaName];
+                    this.totalLessons = this.lessonData.lessons.length;
+                    this.generateAllLessons();
+                    this.updateProgress();
+                    this.updateLesson();
+                } catch (error) {
+                    console.error('Error loading lesson data:', error);
+                    this.createFallbackLessons();
+                }
+            }
+
+            generateAllLessons() {
+                this.lessonContent.innerHTML = '';
+                
+                this.lessonData.lessons.forEach((lesson, index) => {
+                    const slideElement = this.createLessonSlide(lesson, index === 0);
+                    this.lessonContent.appendChild(slideElement);
+                });
+
+                const summarySlide = this.createSummarySlide();
+                this.lessonContent.appendChild(summarySlide);
+            }
+
+            createLessonSlide(lesson, isActive = false) {
+                const slide = document.createElement('div');
+                slide.className = `lesson-slide${isActive ? ' active' : ''}`;
+                slide.setAttribute('data-lesson', lesson.id);
+
+                const mouthPositionItems = this.generateMouthPositionItems(lesson.mouthPosition);
+                
+                slide.innerHTML = `
+                    <div class="letter-display">
+                        <div class="main-letter">${lesson.letter}</div>
+                        <div class="romanization">${lesson.romanization}</div>
+                        <div class="sound-description">${lesson.soundDescription}</div>
+                    </div>
+                    
+                    <div class="lesson-details">
+                        <div class="mouth-position">
+                            <h3>Mouth Position</h3>
+                            <div class="position-grid">
+                                ${mouthPositionItems}
+                            </div>
+                        </div>
+
+                        <div class="practice-section">
+                            <h3>Practice Words</h3>
+                            <div class="practice-words">
+                                ${lesson.practiceWords.map(word => `
+                                    <div class="word-item">
+                                        <span class="hindi">${word.hindi}</span>
+                                        <span class="romanization">${word.romanization}</span>
+                                        <span class="meaning">${word.meaning}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <div class="tips-section">
+                            <h3>Key Points</h3>
+                            <ul>
+                                ${lesson.keyPoints.map(point => `<li>${point}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+
+                return slide;
+            }
+
+            generateMouthPositionItems(mouthPosition) {
+                const items = [];
+                
+                if (mouthPosition.tongue) {
+                    items.push(`<div class="position-item"><strong>Tongue:</strong> ${mouthPosition.tongue}</div>`);
+                }
+                if (mouthPosition.lips) {
+                    items.push(`<div class="position-item"><strong>Lips:</strong> ${mouthPosition.lips}</div>`);
+                }
+                if (mouthPosition.jaw) {
+                    items.push(`<div class="position-item"><strong>Jaw:</strong> ${mouthPosition.jaw}</div>`);
+                }
+                if (mouthPosition.airFlow) {
+                    items.push(`<div class="position-item"><strong>Air Flow:</strong> ${mouthPosition.airFlow}</div>`);
+                }
+                if (mouthPosition.vocalCords) {
+                    items.push(`<div class="position-item"><strong>Vocal Cords:</strong> ${mouthPosition.vocalCords}</div>`);
+                }
+
+                return items.join('');
+            }
+
+            createSummarySlide() {
+                const slide = document.createElement('div');
+                slide.className = 'lesson-slide';
+                slide.setAttribute('data-lesson', this.totalLessons + 1);
+
+                slide.innerHTML = `
+                    <div class="summary-content">
+                        <h2>${this.lessonData.title}</h2>
+                        <div class="consonant-chart-container">
+                            <h3>Cha Varga Overview</h3>
+                            <div class="chart-visual">
+                                <div class="consonant-series">
+                                    <div class="series-row">
+                                        <strong>Voiceless:</strong> च (unaspirated) → छ (aspirated)
+                                    </div>
+                                    <div class="series-row">
+                                        <strong>Voiced:</strong> ज (unaspirated) → झ (aspirated)
+                                    </div>
+                                    <div class="series-row">
+                                        <strong>Nasal:</strong> ञ (voiced nasal)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="key-concepts">
+                            <h3>Key Concepts</h3>
+                            <div class="concept-grid">
+                                <div class="concept-item">
+                                    <strong>Articulation Place:</strong> Middle of tongue touches hard palate
+                                </div>
+                                <div class="concept-item">
+                                    <strong>Position:</strong> More forward than Ka Varga, more central
+                                </div>
+                                <div class="concept-item">
+                                    <strong>Sound Quality:</strong> Crisp, clear, "ch" family sounds
+                                </div>
+                                <div class="concept-item">
+                                    <strong>Usage:</strong> Very common in everyday Hindi words
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="completion-badge">
+                            <h3>🎉 Cha Varga Complete!</h3>
+                            <p>You've mastered all palatal consonants. Ready for the next series?</p>
+                            <button class="action-btn" onclick="window.location.href='index.html'">Choose Next Varga</button>
+                        </div>
+                    </div>
+                `;
+
+                return slide;
+            }
+
+            createFallbackLessons() {
+                this.lessonContent.innerHTML = `
+                    <div class="lesson-slide active" data-lesson="1">
+                        <div class="letter-display">
+                            <div class="main-letter">च</div>
+                            <div class="romanization">cha</div>
+                            <div class="sound-description">Voiceless palatal stop</div>
+                        </div>
+                        <p>Loading lesson data...</p>
+                    </div>
+                `;
+            }
+
+            setupEventListeners() {
+                this.prevBtn.addEventListener('click', () => this.previousLesson());
+                this.nextBtn.addEventListener('click', () => this.nextLesson());
+                this.playAudioBtn.addEventListener('click', () => this.playAudio());
+                this.testBtn.addEventListener('click', () => this.openTest());
+                this.markCompleteBtn.addEventListener('click', () => this.markComplete());
+                
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') this.previousLesson();
+                    if (e.key === 'ArrowRight') this.nextLesson();
+                    if (e.key === ' ') {
+                        e.preventDefault();
+                        this.playAudio();
+                    }
+                });
+            }
+
+            nextLesson() {
+                if (this.currentLesson < this.totalLessons + 1) {
+                    this.currentLesson++;
+                    this.updateLesson();
+                }
+            }
+
+            previousLesson() {
+                if (this.currentLesson > 1) {
+                    this.currentLesson--;
+                    this.updateLesson();
+                }
+            }
+
+            updateLesson() {
+                const slides = document.querySelectorAll('.lesson-slide');
+                slides.forEach(slide => slide.classList.remove('active'));
+                
+                const currentSlide = document.querySelector(`[data-lesson="${this.currentLesson}"]`);
+                if (currentSlide) {
+                    currentSlide.classList.add('active');
+                }
+                
+                this.prevBtn.disabled = this.currentLesson === 1;
+                this.nextBtn.disabled = this.currentLesson === this.totalLessons + 1;
+                
+                if (this.currentLesson <= this.totalLessons) {
+                    this.lessonCounter.textContent = `${this.currentLesson} of ${this.totalLessons}`;
+                } else {
+                    this.lessonCounter.textContent = `Summary`;
+                }
+                
+                this.updateProgress();
+                this.updateCompletionStatus();
+            }
+
+            updateProgress() {
+                const progressPercent = (this.currentLesson / (this.totalLessons + 1)) * 100;
+                this.progressFill.style.width = `${progressPercent}%`;
+            }
+
+            updateCompletionStatus() {
+                const isCompleted = this.completed.includes(this.currentLesson);
+                this.markCompleteBtn.textContent = isCompleted ? '✓ Completed' : '✓ Mark Complete';
+                this.markCompleteBtn.style.background = isCompleted ? 
+                    'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)' : 
+                    'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+            }
+
+            markComplete() {
+                if (!this.completed.includes(this.currentLesson)) {
+                    this.completed.push(this.currentLesson);
+                    localStorage.setItem(`completed_${this.vargaName}`, JSON.stringify(this.completed));
+                    this.updateCompletionStatus();
+                    this.showCompletionFeedback();
+                }
+            }
+
+            showCompletionFeedback() {
+                const feedback = document.createElement('div');
+                feedback.className = 'completion-feedback';
+                feedback.innerHTML = `
+                    <div class="feedback-content">
+                        <div class="feedback-icon">🎉</div>
+                        <div class="feedback-text">Lesson completed!</div>
+                    </div>
+                `;
+                
+                document.body.appendChild(feedback);
+                
+                setTimeout(() => {
+                    feedback.classList.add('show');
+                }, 100);
+                
+                setTimeout(() => {
+                    feedback.classList.remove('show');
+                    setTimeout(() => {
+                        document.body.removeChild(feedback);
+                    }, 300);
+                }, 2000);
+            }
+
+            playAudio() {
+                this.synthesizeConsonantSound(this.currentLesson);
+            }
+
+            synthesizeConsonantSound(lessonNumber) {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (!AudioContext) {
+                    alert('Audio synthesis not supported in this browser');
+                    return;
+                }
+
+                const audioContext = new AudioContext();
+                
+                // Cha Varga consonant frequencies
+                const consonantFreqs = {
+                    1: {type: 'stop', f: 120, aspiration: false, voiced: false}, // च
+                    2: {type: 'stop', f: 120, aspiration: true, voiced: false},  // छ
+                    3: {type: 'stop', f: 120, aspiration: false, voiced: true},  // ज
+                    4: {type: 'stop', f: 120, aspiration: true, voiced: true},   // झ
+                    5: {type: 'nasal', f: 150, voiced: true}                    // ञ
+                };
+
+                const freq = consonantFreqs[lessonNumber];
+                if (!freq) return;
+
+                this.createConsonantSound(audioContext, freq);
+            }
+
+            createConsonantSound(audioContext, freq) {
+                const duration = freq.type === 'nasal' ? 1.0 : 0.8;
+                
+                const osc = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                osc.frequency.setValueAtTime(freq.f, audioContext.currentTime);
+                osc.type = freq.type === 'nasal' ? 'sine' : 'square';
+                
+                if (freq.type === 'stop') {
+                    gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+                    gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.02);
+                    gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.08);
+                    
+                    if (freq.aspiration) {
+                        setTimeout(() => {
+                            const noiseBuffer = audioContext.createBuffer(1, audioContext.sampleRate * 0.2, audioContext.sampleRate);
+                            const noiseData = noiseBuffer.getChannelData(0);
+                            for (let i = 0; i < noiseData.length; i++) {
+                                noiseData[i] = (Math.random() * 2 - 1) * 0.1;
+                            }
+                            
+                            const noiseSource = audioContext.createBufferSource();
+                            const noiseGain = audioContext.createGain();
+                            noiseSource.buffer = noiseBuffer;
+                            noiseGain.gain.setValueAtTime(0.2, audioContext.currentTime);
+                            noiseGain.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.2);
+                            
+                            noiseSource.connect(noiseGain);
+                            noiseGain.connect(audioContext.destination);
+                            noiseSource.start(audioContext.currentTime);
+                        }, 80);
+                    }
+                } else {
+                    gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+                    gainNode.gain.linearRampToValueAtTime(0.2, audioContext.currentTime + 0.1);
+                    gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + duration);
+                }
+
+                osc.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                osc.start(audioContext.currentTime);
+                osc.stop(audioContext.currentTime + duration);
+
+                setTimeout(() => {
+                    this.addVowelSound(audioContext, 730, 1090);
+                }, 100);
+
+                this.showAudioFeedback();
+            }
+
+            addVowelSound(audioContext, f1, f2) {
+                const duration = 0.5;
+                const osc1 = audioContext.createOscillator();
+                const osc2 = audioContext.createOscillator();
+                const gain1 = audioContext.createGain();
+                const gain2 = audioContext.createGain();
+
+                osc1.frequency.setValueAtTime(f1, audioContext.currentTime);
+                osc2.frequency.setValueAtTime(f2, audioContext.currentTime);
+                osc1.type = osc2.type = 'sawtooth';
+
+                gain1.gain.setValueAtTime(0.1, audioContext.currentTime);
+                gain2.gain.setValueAtTime(0.05, audioContext.currentTime);
+
+                osc1.connect(gain1);
+                osc2.connect(gain2);
+                gain1.connect(audioContext.destination);
+                gain2.connect(audioContext.destination);
+
+                osc1.start(audioContext.currentTime);
+                osc2.start(audioContext.currentTime);
+                osc1.stop(audioContext.currentTime + duration);
+                osc2.stop(audioContext.currentTime + duration);
+            }
+
+            showAudioFeedback() {
+                this.playAudioBtn.style.transform = 'scale(1.1)';
+                this.playAudioBtn.style.background = 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)';
+                
+                setTimeout(() => {
+                    this.playAudioBtn.style.transform = 'scale(1)';
+                    this.playAudioBtn.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                }, 200);
+            }
+
+            openTest() {
+                alert('Quiz functionality coming soon!');
+            }
+        }
+
+        // Initialize the lesson navigator when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new ChaVargaLessonNavigator();
+        });
+    </script>
+</body>
+</html>

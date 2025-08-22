@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Letters | Devanagari Learning Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lesson.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo"><a href="index.html" style="color: white; text-decoration: none;">देवनागरी Learning Hub</a></h1>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">← Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="lesson-header">
+                <h1>Compound Letters (संयुक्त अक्षर)</h1>
+                <p class="lesson-subtitle">Learn special compound characters and conjuncts</p>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%"></div>
+            </div>
+
+            <nav class="lesson-nav">
+                <button class="nav-btn" id="prevBtn" disabled>← Previous</button>
+                <span class="lesson-counter">1 of 3</span>
+                <button class="nav-btn" id="nextBtn">Next →</button>
+            </nav>
+
+            <div class="lesson-content" id="lessonContent">
+                <!-- Lessons will be dynamically loaded -->
+            </div>
+
+            <div class="lesson-footer">
+                <button class="action-btn" id="playAudio">🔊 Play Audio</button>
+                <button class="action-btn" id="testYourself">📝 Test Yourself</button>
+                <button class="action-btn" id="markComplete">✓ Mark Complete</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Simple compound letter navigator
+        class CompoundLessonNavigator {
+            constructor() {
+                this.currentLesson = 1;
+                this.totalLessons = 3;
+                this.completed = JSON.parse(localStorage.getItem('completed_compounds') || '[]');
+                this.lessonData = null;
+                
+                this.initializeElements();
+                this.setupEventListeners();
+                this.loadLessonData();
+            }
+
+            initializeElements() {
+                this.prevBtn = document.getElementById('prevBtn');
+                this.nextBtn = document.getElementById('nextBtn');
+                this.lessonCounter = document.querySelector('.lesson-counter');
+                this.progressFill = document.querySelector('.progress-fill');
+                this.lessonContent = document.getElementById('lessonContent');
+                this.playAudioBtn = document.getElementById('playAudio');
+                this.testBtn = document.getElementById('testYourself');
+                this.markCompleteBtn = document.getElementById('markComplete');
+            }
+
+            async loadLessonData() {
+                try {
+                    const response = await fetch('data.json');
+                    const data = await response.json();
+                    this.lessonData = data.specialCharacters;
+                    this.generateAllLessons();
+                    this.updateLesson();
+                } catch (error) {
+                    console.error('Error loading lesson data:', error);
+                    this.createFallbackLessons();
+                }
+            }
+
+            generateAllLessons() {
+                this.lessonContent.innerHTML = '';
+                
+                this.lessonData.lessons.forEach((lesson, index) => {
+                    const slideElement = this.createLessonSlide(lesson, index === 0);
+                    this.lessonContent.appendChild(slideElement);
+                });
+
+                const summarySlide = this.createSummarySlide();
+                this.lessonContent.appendChild(summarySlide);
+            }
+
+            createLessonSlide(lesson, isActive = false) {
+                const slide = document.createElement('div');
+                slide.className = `lesson-slide${isActive ? ' active' : ''}`;
+                slide.setAttribute('data-lesson', lesson.id);
+                
+                slide.innerHTML = `
+                    <div class="letter-display">
+                        <div class="main-letter">${lesson.letter}</div>
+                        <div class="romanization">${lesson.romanization}</div>
+                        <div class="sound-description">${lesson.soundDescription}</div>
+                    </div>
+                    
+                    <div class="lesson-details">
+                        <div class="compound-info">
+                            <h3>Formation</h3>
+                            <div class="formation-visual">
+                                <div class="components">
+                                    ${lesson.components.map(comp => `<span class="component">${comp}</span>`).join(' + ')}
+                                    <span class="equals">=</span>
+                                    <span class="result">${lesson.letter}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="practice-section">
+                            <h3>Practice Words</h3>
+                            <div class="practice-words">
+                                ${lesson.practiceWords.map(word => `
+                                    <div class="word-item">
+                                        <span class="hindi">${word.hindi}</span>
+                                        <span class="romanization">${word.romanization}</span>
+                                        <span class="meaning">${word.meaning}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <div class="tips-section">
+                            <h3>Usage Notes</h3>
+                            <ul>
+                                <li>Compound letters combine two consonants</li>
+                                <li>Often found in Sanskrit-derived words</li>
+                                <li>Pronounced as a blend of both sounds</li>
+                                <li>Important for reading classical texts</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+
+                return slide;
+            }
+
+            createSummarySlide() {
+                const slide = document.createElement('div');
+                slide.className = 'lesson-slide';
+                slide.setAttribute('data-lesson', this.totalLessons + 1);
+
+                slide.innerHTML = `
+                    <div class="summary-content">
+                        <h2>Compound Letters Summary</h2>
+                        <div class="compounds-overview">
+                            <h3>Key Compounds</h3>
+                            <div class="compounds-grid">
+                                <div class="compound-item">
+                                    <strong>क्ष</strong> (kṣa) = क + ष
+                                    <small>Very common in Sanskrit words</small>
+                                </div>
+                                <div class="compound-item">
+                                    <strong>त्र</strong> (tra) = त + र
+                                    <small>Found in many Hindi words</small>
+                                </div>
+                                <div class="compound-item">
+                                    <strong>ज्ञ</strong> (gya) = ज + ञ
+                                    <small>Often pronounced as 'gya'</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="completion-badge">
+                            <h3>🎉 Compounds Complete!</h3>
+                            <p>You've learned the most important compound letters in Hindi!</p>
+                            <button class="action-btn" onclick="window.location.href='index.html'">Back to Home</button>
+                        </div>
+                    </div>
+                `;
+
+                return slide;
+            }
+
+            createFallbackLessons() {
+                this.lessonContent.innerHTML = `
+                    <div class="lesson-slide active" data-lesson="1">
+                        <div class="letter-display">
+                            <div class="main-letter">क्ष</div>
+                            <div class="romanization">kṣa</div>
+                            <div class="sound-description">Compound: क + ष</div>
+                        </div>
+                        <p>Loading lesson data...</p>
+                    </div>
+                `;
+            }
+
+            setupEventListeners() {
+                this.prevBtn.addEventListener('click', () => this.previousLesson());
+                this.nextBtn.addEventListener('click', () => this.nextLesson());
+                this.playAudioBtn.addEventListener('click', () => this.playAudio());
+                this.testBtn.addEventListener('click', () => this.openTest());
+                this.markCompleteBtn.addEventListener('click', () => this.markComplete());
+                
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') this.previousLesson();
+                    if (e.key === 'ArrowRight') this.nextLesson();
+                });
+            }
+
+            nextLesson() {
+                if (this.currentLesson < this.totalLessons + 1) {
+                    this.currentLesson++;
+                    this.updateLesson();
+                }
+            }
+
+            previousLesson() {
+                if (this.currentLesson > 1) {
+                    this.currentLesson--;
+                    this.updateLesson();
+                }
+            }
+
+            updateLesson() {
+                const slides = document.querySelectorAll('.lesson-slide');
+                slides.forEach(slide => slide.classList.remove('active'));
+                
+                const currentSlide = document.querySelector(`[data-lesson="${this.currentLesson}"]`);
+                if (currentSlide) {
+                    currentSlide.classList.add('active');
+                }
+                
+                this.prevBtn.disabled = this.currentLesson === 1;
+                this.nextBtn.disabled = this.currentLesson === this.totalLessons + 1;
+                
+                if (this.currentLesson <= this.totalLessons) {
+                    this.lessonCounter.textContent = `${this.currentLesson} of ${this.totalLessons}`;
+                } else {
+                    this.lessonCounter.textContent = `Summary`;
+                }
+                
+                this.updateProgress();
+                this.updateCompletionStatus();
+            }
+
+            updateProgress() {
+                const progressPercent = (this.currentLesson / (this.totalLessons + 1)) * 100;
+                this.progressFill.style.width = `${progressPercent}%`;
+            }
+
+            updateCompletionStatus() {
+                const isCompleted = this.completed.includes(this.currentLesson);
+                this.markCompleteBtn.textContent = isCompleted ? '✓ Completed' : '✓ Mark Complete';
+            }
+
+            markComplete() {
+                if (!this.completed.includes(this.currentLesson)) {
+                    this.completed.push(this.currentLesson);
+                    localStorage.setItem('completed_compounds', JSON.stringify(this.completed));
+                    this.updateCompletionStatus();
+                }
+            }
+
+            playAudio() {
+                alert('Audio for compound letters coming soon!');
+            }
+
+            openTest() {
+                alert('Quiz functionality coming soon!');
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new CompoundLessonNavigator();
+        });
+    </script>
+
+    <style>
+        .formation-visual {
+            background: #f8f9ff;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .components {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        .component {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            color: #667eea;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .equals {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .result {
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 2rem;
+        }
+
+        .compounds-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .compound-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .compound-item strong {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            font-size: 2rem;
+            color: #667eea;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .compound-item small {
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</body>
+</html>

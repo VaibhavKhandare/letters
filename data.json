@@ -337,6 +337,75 @@
             "Like 'k' in \"kite\" or \"key\"",
             "Paper should flutter if held near mouth"
           ]
+        },
+        {
+          "id": 15,
+          "letter": "ग",
+          "romanization": "ga",
+          "soundDescription": "Voiced velar stop",
+          "mouthPosition": {
+            "tongue": "Back part touches soft palate, vocal cords vibrate",
+            "lips": "Neutral and relaxed",
+            "jaw": "Slightly dropped, teeth apart",
+            "airFlow": "Build pressure, gentle release, vocal cords vibrating",
+            "vocalCords": "Vibrating (voiced)"
+          },
+          "practiceWords": [
+            {"hindi": "गाना", "romanization": "gaana", "meaning": "song/to sing"},
+            {"hindi": "गिलास", "romanization": "gilaas", "meaning": "glass"}
+          ],
+          "keyPoints": [
+            "Same tongue position as क but with voice",
+            "Vocal cords vibrate during articulation",
+            "Softer sound than क",
+            "Very common in Hindi words"
+          ]
+        },
+        {
+          "id": 16,
+          "letter": "घ",
+          "romanization": "gha",
+          "soundDescription": "Aspirated voiced velar stop",
+          "mouthPosition": {
+            "tongue": "Same as ग",
+            "lips": "Neutral",
+            "jaw": "Same as ग",
+            "airFlow": "Strong puff of air with vocal cord vibration",
+            "vocalCords": "Vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "घर", "romanization": "ghar", "meaning": "house"},
+            {"hindi": "घंटा", "romanization": "ghanṭaa", "meaning": "hour/bell"}
+          ],
+          "keyPoints": [
+            "Same position as ग but with aspiration",
+            "Both voice and breath together",
+            "Strong puff of air after release",
+            "Less common than ग"
+          ]
+        },
+        {
+          "id": 17,
+          "letter": "ङ",
+          "romanization": "ṅa",
+          "soundDescription": "Velar nasal",
+          "mouthPosition": {
+            "tongue": "Back touches soft palate, air through nose",
+            "lips": "Neutral",
+            "jaw": "Relaxed",
+            "airFlow": "Air flows through nose, not mouth",
+            "vocalCords": "Vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "अंगूर", "romanization": "anguur", "meaning": "grapes"},
+            {"hindi": "गंगा", "romanization": "gangaa", "meaning": "Ganges river"}
+          ],
+          "keyPoints": [
+            "Nasal sound - air through nose",
+            "Often appears in conjuncts",
+            "Like 'ng' in 'sing'",
+            "Continuous nasal sound"
+          ]
         }
       ]
     },
@@ -346,7 +415,7 @@
       "articulationPlace": "Palatal (hard palate)",
       "lessons": [
         {
-          "id": 15,
+          "id": 18,
           "letter": "च",
           "romanization": "cha",
           "soundDescription": "Voiceless palatal stop",
@@ -367,6 +436,98 @@
             "Clean, crisp sound",
             "No aspiration"
           ]
+        },
+        {
+          "id": 19,
+          "letter": "छ",
+          "romanization": "chha",
+          "soundDescription": "Aspirated voiceless palatal stop",
+          "mouthPosition": {
+            "tongue": "Same as च",
+            "lips": "Neutral",
+            "jaw": "Slightly open",
+            "airFlow": "Strong puff of air after release",
+            "vocalCords": "Not vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "छत", "romanization": "chhat", "meaning": "roof"},
+            {"hindi": "छोटा", "romanization": "chhoṭaa", "meaning": "small"}
+          ],
+          "keyPoints": [
+            "Same position as च but with aspiration",
+            "Strong breath puff after release",
+            "More forceful than च",
+            "Paper should flutter"
+          ]
+        },
+        {
+          "id": 20,
+          "letter": "ज",
+          "romanization": "ja",
+          "soundDescription": "Voiced palatal stop",
+          "mouthPosition": {
+            "tongue": "Middle part touches hard palate with vocal cords vibrating",
+            "lips": "Neutral",
+            "jaw": "Slightly open",
+            "airFlow": "Gentle release with voice",
+            "vocalCords": "Vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "जल", "romanization": "jal", "meaning": "water"},
+            {"hindi": "जानवर", "romanization": "jaanavar", "meaning": "animal"}
+          ],
+          "keyPoints": [
+            "Same position as च but with voice",
+            "Vocal cords vibrate",
+            "Softer than च",
+            "Very common in Hindi"
+          ]
+        },
+        {
+          "id": 21,
+          "letter": "झ",
+          "romanization": "jha",
+          "soundDescription": "Aspirated voiced palatal stop",
+          "mouthPosition": {
+            "tongue": "Same as ज",
+            "lips": "Neutral",
+            "jaw": "Slightly open",
+            "airFlow": "Strong puff with vocal cord vibration",
+            "vocalCords": "Vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "झंडा", "romanization": "jhanḍaa", "meaning": "flag"},
+            {"hindi": "झील", "romanization": "jhiil", "meaning": "lake"}
+          ],
+          "keyPoints": [
+            "Same position as ज but with aspiration",
+            "Both voice and breath together",
+            "Less common than ज",
+            "Strong puff with vibration"
+          ]
+        },
+        {
+          "id": 22,
+          "letter": "ञ",
+          "romanization": "ña",
+          "soundDescription": "Palatal nasal",
+          "mouthPosition": {
+            "tongue": "Middle touches hard palate, air through nose",
+            "lips": "Neutral",
+            "jaw": "Relaxed",
+            "airFlow": "Air flows through nose",
+            "vocalCords": "Vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "ज्ञान", "romanization": "gyaan", "meaning": "knowledge"},
+            {"hindi": "यज्ञ", "romanization": "yagya", "meaning": "ritual"}
+          ],
+          "keyPoints": [
+            "Nasal sound at palate",
+            "Often in conjuncts like ज्ञ",
+            "Air through nose only",
+            "Continuous nasal tone"
+          ]
         }
       ]
     },
@@ -376,7 +537,7 @@
       "articulationPlace": "Retroflex (roof of mouth)",
       "lessons": [
         {
-          "id": 16,
+          "id": 23,
           "letter": "ट",
           "romanization": "ṭa",
           "soundDescription": "Voiceless retroflex stop",
@@ -397,6 +558,98 @@
             "Distinct from dental त",
             "More 'hollow' sound"
           ]
+        },
+        {
+          "id": 24,
+          "letter": "ठ",
+          "romanization": "ṭha",
+          "soundDescription": "Aspirated voiceless retroflex stop",
+          "mouthPosition": {
+            "tongue": "Same as ट",
+            "lips": "Neutral",
+            "jaw": "Open",
+            "airFlow": "Strong puff from roof contact",
+            "vocalCords": "Not vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "ठंडा", "romanization": "ṭhanḍaa", "meaning": "cold"},
+            {"hindi": "ठीक", "romanization": "ṭhiik", "meaning": "okay"}
+          ],
+          "keyPoints": [
+            "Same position as ट with aspiration",
+            "Strong breath puff",
+            "Hollow aspirated sound",
+            "Paper should flutter"
+          ]
+        },
+        {
+          "id": 25,
+          "letter": "ड",
+          "romanization": "ḍa",
+          "soundDescription": "Voiced retroflex stop",
+          "mouthPosition": {
+            "tongue": "Tip curls back with vocal cord vibration",
+            "lips": "Neutral",
+            "jaw": "Open",
+            "airFlow": "Gentle release with voice",
+            "vocalCords": "Vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "डाकिया", "romanization": "ḍaakiyaa", "meaning": "postman"},
+            {"hindi": "लड़का", "romanization": "laṛkaa", "meaning": "boy"}
+          ],
+          "keyPoints": [
+            "Same position as ट but with voice",
+            "Vocal cords vibrate",
+            "Softer than ट",
+            "Common in Hindi words"
+          ]
+        },
+        {
+          "id": 26,
+          "letter": "ढ",
+          "romanization": "ḍha",
+          "soundDescription": "Aspirated voiced retroflex stop",
+          "mouthPosition": {
+            "tongue": "Same as ड",
+            "lips": "Neutral",
+            "jaw": "Open",
+            "airFlow": "Strong puff with vocal vibration",
+            "vocalCords": "Vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "ढक्कन", "romanization": "ḍhakkan", "meaning": "lid"},
+            {"hindi": "ढोल", "romanization": "ḍhol", "meaning": "drum"}
+          ],
+          "keyPoints": [
+            "Same position as ड with aspiration",
+            "Voice and breath together",
+            "Less common than ड",
+            "Hollow aspirated with voice"
+          ]
+        },
+        {
+          "id": 27,
+          "letter": "ण",
+          "romanization": "ṇa",
+          "soundDescription": "Retroflex nasal",
+          "mouthPosition": {
+            "tongue": "Tip curls back, air through nose",
+            "lips": "Neutral",
+            "jaw": "Relaxed",
+            "airFlow": "Air flows through nose",
+            "vocalCords": "Vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "गुण", "romanization": "guṇa", "meaning": "quality"},
+            {"hindi": "कण", "romanization": "kaṇa", "meaning": "particle"}
+          ],
+          "keyPoints": [
+            "Retroflex nasal sound",
+            "Tongue curled back",
+            "Air through nose only",
+            "Often in Sanskrit words"
+          ]
         }
       ]
     },
@@ -406,7 +659,7 @@
       "articulationPlace": "Dental (teeth)",
       "lessons": [
         {
-          "id": 17,
+          "id": 28,
           "letter": "त",
           "romanization": "ta",
           "soundDescription": "Voiceless dental stop",
@@ -426,6 +679,98 @@
             "More forward than ट",
             "Sharper sound than ट",
             "Common in Hindi words"
+          ]
+        },
+        {
+          "id": 29,
+          "letter": "थ",
+          "romanization": "tha",
+          "soundDescription": "Aspirated voiceless dental stop",
+          "mouthPosition": {
+            "tongue": "Same as त",
+            "lips": "Neutral",
+            "jaw": "Open",
+            "airFlow": "Strong puff from teeth contact",
+            "vocalCords": "Not vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "थैला", "romanization": "thailaa", "meaning": "bag"},
+            {"hindi": "हाथ", "romanization": "haath", "meaning": "hand"}
+          ],
+          "keyPoints": [
+            "Same position as त with aspiration",
+            "Strong breath puff",
+            "Sharp aspirated sound",
+            "Different from ठ (retroflex)"
+          ]
+        },
+        {
+          "id": 30,
+          "letter": "द",
+          "romanization": "da",
+          "soundDescription": "Voiced dental stop",
+          "mouthPosition": {
+            "tongue": "Tip touches teeth with vocal vibration",
+            "lips": "Neutral",
+            "jaw": "Open",
+            "airFlow": "Gentle release with voice",
+            "vocalCords": "Vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "दिन", "romanization": "din", "meaning": "day"},
+            {"hindi": "दूध", "romanization": "duudh", "meaning": "milk"}
+          ],
+          "keyPoints": [
+            "Same position as त but with voice",
+            "Vocal cords vibrate",
+            "Softer than त",
+            "Very common in Hindi"
+          ]
+        },
+        {
+          "id": 31,
+          "letter": "ध",
+          "romanization": "dha",
+          "soundDescription": "Aspirated voiced dental stop",
+          "mouthPosition": {
+            "tongue": "Same as द",
+            "lips": "Neutral",
+            "jaw": "Open",
+            "airFlow": "Strong puff with vocal vibration",
+            "vocalCords": "Vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "धन", "romanization": "dhan", "meaning": "wealth"},
+            {"hindi": "धीमा", "romanization": "dhiimaa", "meaning": "slow"}
+          ],
+          "keyPoints": [
+            "Same position as द with aspiration",
+            "Voice and breath together",
+            "Less common than द",
+            "Sharp aspirated with voice"
+          ]
+        },
+        {
+          "id": 32,
+          "letter": "न",
+          "romanization": "na",
+          "soundDescription": "Dental nasal",
+          "mouthPosition": {
+            "tongue": "Tip touches teeth, air through nose",
+            "lips": "Neutral",
+            "jaw": "Relaxed",
+            "airFlow": "Air flows through nose",
+            "vocalCords": "Vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "नाम", "romanization": "naam", "meaning": "name"},
+            {"hindi": "पानी", "romanization": "paanii", "meaning": "water"}
+          ],
+          "keyPoints": [
+            "Dental nasal sound",
+            "Tongue at teeth",
+            "Air through nose only",
+            "Very common in Hindi"
           ]
         }
       ]
@@ -464,7 +809,7 @@
           ]
         },
         {
-          "id": 19,
+          "id": 34,
           "letter": "फ",
           "romanization": "pha",
           "soundDescription": "Aspirated voiceless bilabial stop",
@@ -484,6 +829,75 @@
             "Strong aspiration after release",
             "Like 'p' in \"pin\" or \"phone\"",
             "Paper should flutter"
+          ]
+        },
+        {
+          "id": 35,
+          "letter": "ब",
+          "romanization": "ba",
+          "soundDescription": "Voiced bilabial stop",
+          "mouthPosition": {
+            "tongue": "Completely relaxed",
+            "lips": "Both lips together with vocal vibration",
+            "jaw": "Relaxed and neutral",
+            "airFlow": "Gentle release with voice",
+            "vocalCords": "Vibrating (voiced)"
+          },
+          "practiceWords": [
+            {"hindi": "बच्चा", "romanization": "bachchaa", "meaning": "child"},
+            {"hindi": "बड़ा", "romanization": "baṛaa", "meaning": "big"}
+          ],
+          "keyPoints": [
+            "Same lip position as प but with voice",
+            "Vocal cords vibrate",
+            "Softer than प",
+            "Very common in Hindi"
+          ]
+        },
+        {
+          "id": 36,
+          "letter": "भ",
+          "romanization": "bha",
+          "soundDescription": "Aspirated voiced bilabial stop",
+          "mouthPosition": {
+            "tongue": "Relaxed",
+            "lips": "Same as ब",
+            "jaw": "Neutral",
+            "airFlow": "Strong puff with vocal vibration",
+            "vocalCords": "Vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "भाई", "romanization": "bhaaii", "meaning": "brother"},
+            {"hindi": "भोजन", "romanization": "bhojan", "meaning": "food"}
+          ],
+          "keyPoints": [
+            "Same position as ब with aspiration",
+            "Voice and breath together",
+            "Less common than ब",
+            "Soft aspirated sound"
+          ]
+        },
+        {
+          "id": 37,
+          "letter": "म",
+          "romanization": "ma",
+          "soundDescription": "Bilabial nasal",
+          "mouthPosition": {
+            "tongue": "Relaxed",
+            "lips": "Lightly closed, air through nose",
+            "jaw": "Relaxed",
+            "airFlow": "Air flows through nose only",
+            "vocalCords": "Vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "माता", "romanization": "maataa", "meaning": "mother"},
+            {"hindi": "मन", "romanization": "man", "meaning": "mind"}
+          ],
+          "keyPoints": [
+            "Bilabial nasal sound",
+            "Air through nose only",
+            "Lips lightly closed",
+            "Very common in Hindi"
           ]
         }
       ]
@@ -516,7 +930,7 @@
           ]
         },
         {
-          "id": 21,
+          "id": 39,
           "letter": "र",
           "romanization": "ra",
           "soundDescription": "Alveolar trill",
@@ -535,6 +949,144 @@
             "Tongue tip vibrates (trill)",
             "Different from English 'r'",
             "Light, quick vibration",
+            "Very common in Hindi"
+          ]
+        },
+        {
+          "id": 40,
+          "letter": "ल",
+          "romanization": "la",
+          "soundDescription": "Lateral approximant",
+          "mouthPosition": {
+            "tongue": "Tip touches alveolar ridge, sides open",
+            "lips": "Neutral",
+            "jaw": "Slightly open",
+            "airFlow": "Air flows around tongue sides",
+            "vocalCords": "Vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "लड़का", "romanization": "laṛkaa", "meaning": "boy"},
+            {"hindi": "फल", "romanization": "phal", "meaning": "fruit"}
+          ],
+          "keyPoints": [
+            "Tongue tip at alveolar ridge",
+            "Air flows around sides",
+            "Like English 'l'",
+            "Very common in Hindi"
+          ]
+        },
+        {
+          "id": 41,
+          "letter": "व",
+          "romanization": "va",
+          "soundDescription": "Labiodental approximant",
+          "mouthPosition": {
+            "tongue": "Relaxed",
+            "lips": "Upper teeth touch lower lip lightly",
+            "jaw": "Slightly open",
+            "airFlow": "Smooth flow between lip and teeth",
+            "vocalCords": "Vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "वन", "romanization": "van", "meaning": "forest"},
+            {"hindi": "हवा", "romanization": "havaa", "meaning": "air"}
+          ],
+          "keyPoints": [
+            "Upper teeth touch lower lip",
+            "Like English 'v' or 'w'",
+            "Smooth airflow",
+            "Common in Hindi words"
+          ]
+        },
+        {
+          "id": 42,
+          "letter": "श",
+          "romanization": "śa",
+          "soundDescription": "Voiceless palatal fricative",
+          "mouthPosition": {
+            "tongue": "Middle approaches hard palate closely",
+            "lips": "Slightly spread",
+            "jaw": "Slightly open",
+            "airFlow": "Friction at hard palate",
+            "vocalCords": "Not vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "शाम", "romanization": "śaam", "meaning": "evening"},
+            {"hindi": "पुश्तक", "romanization": "pustaka", "meaning": "book"}
+          ],
+          "keyPoints": [
+            "Friction at hard palate",
+            "Like 'sh' in English",
+            "Voiceless fricative",
+            "Different from स and ष"
+          ]
+        },
+        {
+          "id": 43,
+          "letter": "ष",
+          "romanization": "ṣa",
+          "soundDescription": "Voiceless retroflex fricative",
+          "mouthPosition": {
+            "tongue": "Tip curls back, creates friction",
+            "lips": "Slightly rounded",
+            "jaw": "Slightly open",
+            "airFlow": "Friction at retroflex position",
+            "vocalCords": "Not vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "षट्", "romanization": "ṣaṭ", "meaning": "six"},
+            {"hindi": "विष्णु", "romanization": "viṣṇu", "meaning": "Vishnu"}
+          ],
+          "keyPoints": [
+            "Retroflex fricative",
+            "Tongue curled back",
+            "Different from श and स",
+            "Often in Sanskrit words"
+          ]
+        },
+        {
+          "id": 44,
+          "letter": "स",
+          "romanization": "sa",
+          "soundDescription": "Voiceless alveolar fricative",
+          "mouthPosition": {
+            "tongue": "Tip near alveolar ridge, creates friction",
+            "lips": "Slightly spread",
+            "jaw": "Slightly open",
+            "airFlow": "Friction at alveolar ridge",
+            "vocalCords": "Not vibrating"
+          },
+          "practiceWords": [
+            {"hindi": "सूर्य", "romanization": "suurya", "meaning": "sun"},
+            {"hindi": "मास", "romanization": "maas", "meaning": "month"}
+          ],
+          "keyPoints": [
+            "Alveolar fricative",
+            "Like English 's'",
+            "Tongue tip at alveolar ridge",
+            "Very common in Hindi"
+          ]
+        },
+        {
+          "id": 45,
+          "letter": "ह",
+          "romanization": "ha",
+          "soundDescription": "Voiced glottal fricative",
+          "mouthPosition": {
+            "tongue": "Relaxed",
+            "lips": "Neutral",
+            "jaw": "Open",
+            "airFlow": "Friction at glottis (throat)",
+            "vocalCords": "Vibrating with friction"
+          },
+          "practiceWords": [
+            {"hindi": "हाथ", "romanization": "haath", "meaning": "hand"},
+            {"hindi": "महल", "romanization": "mahal", "meaning": "palace"}
+          ],
+          "keyPoints": [
+            "Glottal fricative",
+            "Like English 'h'",
+            "Friction in throat",
             "Very common in Hindi"
           ]
         }
@@ -578,6 +1130,164 @@
         "practiceWords": [
           {"hindi": "ज्ञान", "romanization": "gyaan", "meaning": "knowledge"},
           {"hindi": "यज्ञ", "romanization": "yagya", "meaning": "sacrifice"}
+        ]
+      }
+    ]
+  },
+  "combinations": {
+    "title": "Consonant-Vowel Combinations (मात्राएं)",
+    "description": "Practice all consonants with every vowel - complete barakhadi for each consonant",
+    "consonants": [
+      {
+        "id": "ka_combinations",
+        "baseConsonant": "क",
+        "romanization": "ka",
+        "title": "Ka with all vowels (क + vowels)",
+        "combinations": [
+          {"devanagari": "क", "romanization": "ka", "vowel": "अ", "meaning": "inherent vowel"},
+          {"devanagari": "का", "romanization": "kaa", "vowel": "आ", "meaning": "with long a"},
+          {"devanagari": "कि", "romanization": "ki", "vowel": "इ", "meaning": "with short i"},
+          {"devanagari": "की", "romanization": "kii", "vowel": "ई", "meaning": "with long i"},
+          {"devanagari": "कु", "romanization": "ku", "vowel": "उ", "meaning": "with short u"},
+          {"devanagari": "कू", "romanization": "kuu", "vowel": "ऊ", "meaning": "with long u"},
+          {"devanagari": "के", "romanization": "ke", "vowel": "ए", "meaning": "with e sound"},
+          {"devanagari": "कै", "romanization": "kai", "vowel": "ऐ", "meaning": "with ai sound"},
+          {"devanagari": "को", "romanization": "ko", "vowel": "ओ", "meaning": "with o sound"},
+          {"devanagari": "कौ", "romanization": "kau", "vowel": "औ", "meaning": "with au sound"},
+          {"devanagari": "कं", "romanization": "kaṃ", "vowel": "अं", "meaning": "with anusvara"},
+          {"devanagari": "कः", "romanization": "kaḥ", "vowel": "अः", "meaning": "with visarga"}
+        ],
+        "practiceWords": [
+          {"hindi": "काम", "romanization": "kaam", "meaning": "work"},
+          {"hindi": "किताब", "romanization": "kitaab", "meaning": "book"},
+          {"hindi": "की", "romanization": "kii", "meaning": "of/possessive"},
+          {"hindi": "कुछ", "romanization": "kuch", "meaning": "some"},
+          {"hindi": "कूल", "romanization": "kuul", "meaning": "cool"},
+          {"hindi": "केला", "romanization": "kela", "meaning": "banana"},
+          {"hindi": "कैसा", "romanization": "kaisa", "meaning": "how"},
+          {"hindi": "कोई", "romanization": "koii", "meaning": "someone"},
+          {"hindi": "कौन", "romanization": "kaun", "meaning": "who"}
+        ]
+      },
+      {
+        "id": "kha_combinations",
+        "baseConsonant": "ख",
+        "romanization": "kha",
+        "title": "Kha with all vowels (ख + vowels)",
+        "combinations": [
+          {"devanagari": "ख", "romanization": "kha", "vowel": "अ", "meaning": "inherent vowel"},
+          {"devanagari": "खा", "romanization": "khaa", "vowel": "आ", "meaning": "with long a"},
+          {"devanagari": "खि", "romanization": "khi", "vowel": "इ", "meaning": "with short i"},
+          {"devanagari": "खी", "romanization": "khii", "vowel": "ई", "meaning": "with long i"},
+          {"devanagari": "खु", "romanization": "khu", "vowel": "उ", "meaning": "with short u"},
+          {"devanagari": "खू", "romanization": "khuu", "vowel": "ऊ", "meaning": "with long u"},
+          {"devanagari": "खे", "romanization": "khe", "vowel": "ए", "meaning": "with e sound"},
+          {"devanagari": "खै", "romanization": "khai", "vowel": "ऐ", "meaning": "with ai sound"},
+          {"devanagari": "खो", "romanization": "kho", "vowel": "ओ", "meaning": "with o sound"},
+          {"devanagari": "खौ", "romanization": "khau", "vowel": "औ", "meaning": "with au sound"},
+          {"devanagari": "खं", "romanization": "khaṃ", "vowel": "अं", "meaning": "with anusvara"},
+          {"devanagari": "खः", "romanization": "khaḥ", "vowel": "अः", "meaning": "with visarga"}
+        ],
+        "practiceWords": [
+          {"hindi": "खाना", "romanization": "khaana", "meaning": "food/to eat"},
+          {"hindi": "खिड़की", "romanization": "khiṛkii", "meaning": "window"},
+          {"hindi": "खुश", "romanization": "khush", "meaning": "happy"},
+          {"hindi": "खेल", "romanization": "khel", "meaning": "game"},
+          {"hindi": "खैर", "romanization": "khair", "meaning": "well/anyway"},
+          {"hindi": "खो", "romanization": "kho", "meaning": "lose"}
+        ]
+      },
+      {
+        "id": "ga_combinations",
+        "baseConsonant": "ग",
+        "romanization": "ga",
+        "title": "Ga with all vowels (ग + vowels)",
+        "combinations": [
+          {"devanagari": "ग", "romanization": "ga", "vowel": "अ", "meaning": "inherent vowel"},
+          {"devanagari": "गा", "romanization": "gaa", "vowel": "आ", "meaning": "with long a"},
+          {"devanagari": "गि", "romanization": "gi", "vowel": "इ", "meaning": "with short i"},
+          {"devanagari": "गी", "romanization": "gii", "vowel": "ई", "meaning": "with long i"},
+          {"devanagari": "गु", "romanization": "gu", "vowel": "उ", "meaning": "with short u"},
+          {"devanagari": "गू", "romanization": "guu", "vowel": "ऊ", "meaning": "with long u"},
+          {"devanagari": "गे", "romanization": "ge", "vowel": "ए", "meaning": "with e sound"},
+          {"devanagari": "गै", "romanization": "gai", "vowel": "ऐ", "meaning": "with ai sound"},
+          {"devanagari": "गो", "romanization": "go", "vowel": "ओ", "meaning": "with o sound"},
+          {"devanagari": "गौ", "romanization": "gau", "vowel": "औ", "meaning": "with au sound"},
+          {"devanagari": "गं", "romanization": "gaṃ", "vowel": "अं", "meaning": "with anusvara"},
+          {"devanagari": "गः", "romanization": "gaḥ", "vowel": "अः", "meaning": "with visarga"}
+        ],
+        "practiceWords": [
+          {"hindi": "गाना", "romanization": "gaana", "meaning": "song/to sing"},
+          {"hindi": "गिलास", "romanization": "gilaas", "meaning": "glass"},
+          {"hindi": "गीत", "romanization": "giit", "meaning": "song"},
+          {"hindi": "गुड़", "romanization": "guṛ", "meaning": "jaggery"},
+          {"hindi": "गूंज", "romanization": "guunj", "meaning": "echo"},
+          {"hindi": "गेंद", "romanization": "gend", "meaning": "ball"},
+          {"hindi": "गैस", "romanization": "gais", "meaning": "gas"},
+          {"hindi": "गोल", "romanization": "gol", "meaning": "round"},
+          {"hindi": "गौरव", "romanization": "gaurav", "meaning": "pride"}
+        ]
+      },
+      {
+        "id": "pa_combinations",
+        "baseConsonant": "प",
+        "romanization": "pa",
+        "title": "Pa with all vowels (प + vowels)",
+        "combinations": [
+          {"devanagari": "प", "romanization": "pa", "vowel": "अ", "meaning": "inherent vowel"},
+          {"devanagari": "पा", "romanization": "paa", "vowel": "आ", "meaning": "with long a"},
+          {"devanagari": "पि", "romanization": "pi", "vowel": "इ", "meaning": "with short i"},
+          {"devanagari": "पी", "romanization": "pii", "vowel": "ई", "meaning": "with long i"},
+          {"devanagari": "पु", "romanization": "pu", "vowel": "उ", "meaning": "with short u"},
+          {"devanagari": "पू", "romanization": "puu", "vowel": "ऊ", "meaning": "with long u"},
+          {"devanagari": "पे", "romanization": "pe", "vowel": "ए", "meaning": "with e sound"},
+          {"devanagari": "पै", "romanization": "pai", "vowel": "ऐ", "meaning": "with ai sound"},
+          {"devanagari": "पो", "romanization": "po", "vowel": "ओ", "meaning": "with o sound"},
+          {"devanagari": "पौ", "romanization": "pau", "vowel": "औ", "meaning": "with au sound"},
+          {"devanagari": "पं", "romanization": "paṃ", "vowel": "अं", "meaning": "with anusvara"},
+          {"devanagari": "पः", "romanization": "paḥ", "vowel": "अः", "meaning": "with visarga"}
+        ],
+        "practiceWords": [
+          {"hindi": "पानी", "romanization": "paanii", "meaning": "water"},
+          {"hindi": "पिता", "romanization": "pitaa", "meaning": "father"},
+          {"hindi": "पीला", "romanization": "piilaa", "meaning": "yellow"},
+          {"hindi": "पुल", "romanization": "pul", "meaning": "bridge"},
+          {"hindi": "पूरा", "romanization": "puuraa", "meaning": "complete"},
+          {"hindi": "पेड़", "romanization": "peṛ", "meaning": "tree"},
+          {"hindi": "पैसा", "romanization": "paisaa", "meaning": "money"},
+          {"hindi": "पोता", "romanization": "potaa", "meaning": "grandson"},
+          {"hindi": "पौधा", "romanization": "paudhaa", "meaning": "plant"}
+        ]
+      },
+      {
+        "id": "ma_combinations",
+        "baseConsonant": "म",
+        "romanization": "ma",
+        "title": "Ma with all vowels (म + vowels)",
+        "combinations": [
+          {"devanagari": "म", "romanization": "ma", "vowel": "अ", "meaning": "inherent vowel"},
+          {"devanagari": "मा", "romanization": "maa", "vowel": "आ", "meaning": "with long a"},
+          {"devanagari": "मि", "romanization": "mi", "vowel": "इ", "meaning": "with short i"},
+          {"devanagari": "मी", "romanization": "mii", "vowel": "ई", "meaning": "with long i"},
+          {"devanagari": "मु", "romanization": "mu", "vowel": "उ", "meaning": "with short u"},
+          {"devanagari": "मू", "romanization": "muu", "vowel": "ऊ", "meaning": "with long u"},
+          {"devanagari": "मे", "romanization": "me", "vowel": "ए", "meaning": "with e sound"},
+          {"devanagari": "मै", "romanization": "mai", "vowel": "ऐ", "meaning": "with ai sound"},
+          {"devanagari": "मो", "romanization": "mo", "vowel": "ओ", "meaning": "with o sound"},
+          {"devanagari": "मौ", "romanization": "mau", "vowel": "औ", "meaning": "with au sound"},
+          {"devanagari": "मं", "romanization": "maṃ", "vowel": "अं", "meaning": "with anusvara"},
+          {"devanagari": "मः", "romanization": "maḥ", "vowel": "अः", "meaning": "with visarga"}
+        ],
+        "practiceWords": [
+          {"hindi": "माता", "romanization": "maataa", "meaning": "mother"},
+          {"hindi": "मित्र", "romanization": "mitra", "meaning": "friend"},
+          {"hindi": "मीठा", "romanization": "miiṭhaa", "meaning": "sweet"},
+          {"hindi": "मुंह", "romanization": "munh", "meaning": "mouth"},
+          {"hindi": "मूल", "romanization": "muul", "meaning": "root"},
+          {"hindi": "मेज", "romanization": "mej", "meaning": "table"},
+          {"hindi": "मैं", "romanization": "maiṃ", "meaning": "I"},
+          {"hindi": "मोटा", "romanization": "moṭaa", "meaning": "fat"},
+          {"hindi": "मौसम", "romanization": "mausam", "meaning": "weather"}
         ]
       }
     ]
@@ -645,6 +1355,15 @@
       "preview": "य र ल व श ष स ह",
       "lessonCount": 8,
       "url": "approximants.html"
+    },
+    {
+      "id": "combinations",
+      "title": "Consonant-Vowel Combinations",
+      "icon": "कार",
+      "description": "Practice every consonant with all 12 vowels - complete barakhadi for each letter!",
+      "preview": "का कि की कु कू के कै को कौ कं कः",
+      "lessonCount": 60,
+      "url": "combinations.html"
     },
     {
       "id": "compounds",

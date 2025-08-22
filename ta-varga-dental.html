@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ta Varga Dental - Dental Consonants | Devanagari Learning Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lesson.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo"><a href="index.html" style="color: white; text-decoration: none;">देवनागरी Learning Hub</a></h1>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">← Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="lesson-header">
+                <h1>Ta Varga - Dental (त वर्ग)</h1>
+                <p class="lesson-subtitle">Master consonants made with the tongue tip touching the teeth</p>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%"></div>
+            </div>
+
+            <nav class="lesson-nav">
+                <button class="nav-btn" id="prevBtn" disabled>← Previous</button>
+                <span class="lesson-counter">1 of 5</span>
+                <button class="nav-btn" id="nextBtn">Next →</button>
+            </nav>
+
+            <div class="lesson-content" id="lessonContent">
+                <!-- Lessons will be dynamically loaded -->
+            </div>
+
+            <div class="lesson-footer">
+                <button class="action-btn" id="playAudio">🔊 Play Audio</button>
+                <button class="action-btn" id="testYourself">📝 Test Yourself</button>
+                <button class="action-btn" id="markComplete">✓ Mark Complete</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="lesson.js"></script>
+    <script>
+        // Initialize with ta_varga_dental data
+        document.addEventListener('DOMContentLoaded', () => {
+            new ConsonantLessonNavigator('ta_varga_dental');
+        });
+    </script>
+</body>
+</html>

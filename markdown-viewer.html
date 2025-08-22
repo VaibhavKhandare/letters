@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devanagari Letters Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 350px;
+            background: white;
+            border-right: 1px solid #e1e5e9;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+            background: white;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            margin: -20px -20px 20px -20px;
+        }
+
+        .header h1 {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .folder {
+            margin-bottom: 20px;
+        }
+
+        .folder-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #495057;
+            padding: 10px 12px 8px 10px;
+            border-bottom: 1px solid #e9ecef;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .folder-title:hover {
+            background-color: #f8f9fa;
+            color: #667eea;
+        }
+
+        .folder-title.collapsed {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .collapse-icon {
+            font-size: 0.8rem;
+            transition: transform 0.2s ease;
+        }
+
+        .collapse-icon.collapsed {
+            transform: rotate(-90deg);
+        }
+
+        .file-list {
+            list-style: none;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .file-list.collapsed {
+            max-height: 0;
+            opacity: 0;
+            margin-top: 0;
+        }
+
+        .file-item {
+            padding: 8px 12px;
+            margin: 2px 0;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .file-item:hover {
+            background-color: #f8f9fa;
+            color: #667eea;
+        }
+
+        .file-item.active {
+            background-color: #667eea;
+            color: white;
+        }
+
+        .devanagari {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .content-area {
+            max-width: none;
+        }
+
+        .content-area h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .content-area h2 {
+            color: #34495e;
+            margin: 25px 0 15px 0;
+            font-size: 1.4rem;
+        }
+
+        .content-area h3 {
+            color: #667eea;
+            margin: 20px 0 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .content-area p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .content-area ul, .content-area ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        .content-area li {
+            margin-bottom: 8px;
+        }
+
+        .content-area strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .content-area code {
+            background-color: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+            font-size: 0.9rem;
+        }
+
+        .content-area pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .content-area table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .content-area th,
+        .content-area td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .content-area th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .content-area tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .welcome-message {
+            text-align: center;
+            color: #6c757d;
+            margin-top: 100px;
+        }
+
+        .welcome-message h2 {
+            margin-bottom: 15px;
+            color: #495057;
+        }
+
+        .search-box {
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .file-icon {
+            width: 16px;
+            height: 16px;
+            background: #667eea;
+            border-radius: 3px;
+            display: inline-block;
+            text-align: center;
+            line-height: 16px;
+            font-size: 10px;
+            color: white;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="header">
+                <h1>देवनागरी Letters</h1>
+                <p>Pronunciation guides and mouth positions</p>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search letters...">
+            </div>
+
+            <div id="fileTree"></div>
+        </div>
+
+        <div class="main-content">
+            <div class="content-area" id="contentArea">
+                <div class="welcome-message">
+                    <h2>Welcome to Devanagari Letters Guide</h2>
+                    <p>Select a letter from the sidebar to view detailed pronunciation instructions and mouth positions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // File structure based on the project layout
+        const fileStructure = {
+            "Barakhadi (Vowels)": [
+                { name: "अ (a)", file: "letters/barakhadi/अ (a).md" },
+                { name: "आ (aa)", file: "letters/barakhadi/आ (aa).md" },
+                { name: "इ (i)", file: "letters/barakhadi/इ (i).md" },
+                { name: "ई (ii)", file: "letters/barakhadi/ई (ii).md" },
+                { name: "उ (u)", file: "letters/barakhadi/उ (u).md" },
+                { name: "ऊ (uu)", file: "letters/barakhadi/ऊ (uu).md" },
+                { name: "ए (e)", file: "letters/barakhadi/ए (e).md" },
+                { name: "ऐ (ai)", file: "letters/barakhadi/ऐ (ai).md" },
+                { name: "ओ (o)", file: "letters/barakhadi/ओ (o).md" },
+                { name: "औ (au)", file: "letters/barakhadi/औ (au).md" },
+                { name: "अं (aṃ)", file: "letters/barakhadi/अं (aṃ).md" },
+                { name: "अः (aḥ)", file: "letters/barakhadi/अः (aḥ).md" }
+            ],
+            "Ka Varga (क वर्ग)": [
+                { name: "क (ka)", file: "letters/ka kha ga gha/क (ka).md" },
+                { name: "ख (kha)", file: "letters/ka kha ga gha/ख (kha).md" },
+                { name: "ग (ga)", file: "letters/ka kha ga gha/ग (ga).md" },
+                { name: "घ (gha)", file: "letters/ka kha ga gha/घ (gha).md" },
+                { name: "ङ (ṅa)", file: "letters/ka kha ga gha/ङ (ṅa).md" }
+            ],
+            "Cha Varga (च वर्ग)": [
+                { name: "च (cha)", file: "letters/Cha chha/च (cha).md" },
+                { name: "छ (chha)", file: "letters/ka kha ga gha/छ (chha).md" },
+                { name: "ज (ja)", file: "letters/ka kha ga gha/ज (ja).md" },
+                { name: "ञ (ña)", file: "letters/ka kha ga gha/ञ (ña).md" }
+            ],
+            "Ta Varga - Retroflex (ट वर्ग)": [
+                { name: "ट (ṭa)", file: "letters/ta tha/ट (ṭa).md" },
+                { name: "ठ (ṭha)", file: "letters/ta tha/ठ (ṭha).md" },
+                { name: "ड (ḍa)", file: "letters/ta tha/ड (ḍa).md" },
+                { name: "ढ (ḍha)", file: "letters/ta tha/ढ (ḍha).md" },
+                { name: "ण (ṇa)", file: "letters/ta tha/ण (ṇa).md" }
+            ],
+            "Ta Varga - Dental (त वर्ग)": [
+                { name: "त (ta)", file: "letters/ta tha tha/त (ta).md" },
+                { name: "थ (tha)", file: "letters/ta tha tha/थ (tha).md" },
+                { name: "द (da)", file: "letters/ta tha tha/द (da).md" },
+                { name: "ध (dha)", file: "letters/ta tha tha/ध (dha).md" },
+                { name: "न (na)", file: "letters/ta tha tha/न (na).md" }
+            ],
+            "Pa Varga (प वर्ग)": [
+                { name: "प (pa)", file: "letters/pa fa/प (pa).md" },
+                { name: "फ (pha)", file: "letters/pa fa/फ (pha).md" },
+                { name: "ब (ba)", file: "letters/pa fa/ब (ba).md" },
+                { name: "भ (bha)", file: "letters/pa fa/भ (bha).md" },
+                { name: "म (ma)", file: "letters/pa fa/म (ma).md" }
+            ],
+            "Semi-vowels & Fricatives": [
+                { name: "य (ya)", file: "letters/ya ra la va sha/य (ya).md" },
+                { name: "र (ra)", file: "letters/ya ra la va sha/र (ra).md" },
+                { name: "ल (la)", file: "letters/ya ra la va sha/ल (la).md" },
+                { name: "व (va)", file: "letters/ya ra la va sha/व (va).md" },
+                { name: "श (śa)", file: "letters/ya ra la va sha/श (śa).md" }
+            ],
+            "Special Consonants": [
+                { name: "ष (ṣa)", file: "letters/kshya sa ha/ष (ṣa).md" },
+                { name: "स (sa)", file: "letters/kshya sa ha/स (sa).md" }
+            ],
+            "Compound Letters": [
+                { name: "क्ष (kṣa)", file: "letters/kshya sa ha/क्ष (kṣa).md" },
+                { name: "त्र (tra)", file: "letters/kshya sa ha/त्र (tra).md" },
+                { name: "ज्ञ (gya)", file: "letters/kshya sa ha/ज्ञ (gya).md" }
+            ],
+            "Names": [
+                { name: "Aishwarya", file: "letters/Names/Aishwarya.md" },
+                { name: "Indira", file: "letters/Names/Indira.md" },
+                { name: "Samiksha", file: "letters/Names/Samiksha.md" },
+                { name: "वैभव (Vaibhav)", file: "letters/Names/वैभव.md" }
+            ]
+        };
+
+        let currentActiveFile = null;
+
+        // Render file tree
+        function renderFileTree() {
+            const fileTreeElement = document.getElementById('fileTree');
+            fileTreeElement.innerHTML = '';
+
+            Object.entries(fileStructure).forEach(([folderName, files], index) => {
+                const folderDiv = document.createElement('div');
+                folderDiv.className = 'folder';
+
+                const titleDiv = document.createElement('div');
+                titleDiv.className = 'folder-title';
+                titleDiv.innerHTML = `
+                    <span>${folderName}</span>
+                    <span class="collapse-icon">▼</span>
+                `;
+                
+                // Add click handler for collapse/expand
+                titleDiv.addEventListener('click', () => toggleFolder(titleDiv, fileList));
+                folderDiv.appendChild(titleDiv);
+
+                const fileList = document.createElement('ul');
+                fileList.className = 'file-list';
+                
+                // Collapse all folders except the first one (Barakhadi) by default
+                if (index > 0) {
+                    fileList.classList.add('collapsed');
+                    titleDiv.classList.add('collapsed');
+                    titleDiv.querySelector('.collapse-icon').classList.add('collapsed');
+                }
+
+                files.forEach(fileInfo => {
+                    const fileItem = document.createElement('li');
+                    fileItem.className = 'file-item';
+                    fileItem.innerHTML = `
+                        <span class="file-icon">📄</span>
+                        <span class="devanagari">${fileInfo.name}</span>
+                    `;
+                    fileItem.addEventListener('click', () => loadFile(fileInfo.file, fileItem));
+                    fileList.appendChild(fileItem);
+                });
+
+                folderDiv.appendChild(fileList);
+                fileTreeElement.appendChild(folderDiv);
+            });
+        }
+
+        // Toggle folder collapse/expand
+        function toggleFolder(titleElement, fileListElement) {
+            const collapseIcon = titleElement.querySelector('.collapse-icon');
+            
+            if (fileListElement.classList.contains('collapsed')) {
+                // Expand
+                fileListElement.classList.remove('collapsed');
+                titleElement.classList.remove('collapsed');
+                collapseIcon.classList.remove('collapsed');
+            } else {
+                // Collapse
+                fileListElement.classList.add('collapsed');
+                titleElement.classList.add('collapsed');
+                collapseIcon.classList.add('collapsed');
+            }
+        }
+
+        // Load and display markdown file
+        async function loadFile(filePath, clickedElement) {
+            try {
+                // Remove active class from previous selection
+                if (currentActiveFile) {
+                    currentActiveFile.classList.remove('active');
+                }
+                
+                // Add active class to current selection
+                clickedElement.classList.add('active');
+                currentActiveFile = clickedElement;
+
+                const response = await fetch(filePath);
+                if (!response.ok) {
+                    throw new Error(`Failed to load file: ${response.status}`);
+                }
+                
+                const markdown = await response.text();
+                const html = markdownToHtml(markdown);
+                
+                document.getElementById('contentArea').innerHTML = html;
+            } catch (error) {
+                document.getElementById('contentArea').innerHTML = `
+                    <div style="text-align: center; color: #dc3545; margin-top: 50px;">
+                        <h2>File not found</h2>
+                        <p>Sorry, the file "${filePath}" could not be loaded.</p>
+                        <p>This might be because the file doesn't exist or there's a path issue.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Simple markdown to HTML converter
+        function markdownToHtml(markdown) {
+            let html = markdown;
+            
+            // Headers
+            html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+            html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+            html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+            
+            // Bold
+            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            
+            // Code blocks
+            html = html.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
+            
+            // Inline code
+            html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+            
+            // Lists
+            html = html.replace(/^\- (.*$)/gim, '<ul><li>$1</li></ul>');
+            html = html.replace(/^\d+\. (.*$)/gim, '<ol><li>$1</li></ol>');
+            
+            // Combine consecutive list items
+            html = html.replace(/<\/ul>\s*<ul>/g, '');
+            html = html.replace(/<\/ol>\s*<ol>/g, '');
+            
+            // Line breaks
+            html = html.replace(/\n\n/g, '</p><p>');
+            html = '<p>' + html + '</p>';
+            
+            // Clean up empty paragraphs
+            html = html.replace(/<p><\/p>/g, '');
+            html = html.replace(/<p><h/g, '<h');
+            html = html.replace(/<\/h([1-6])><\/p>/g, '</h$1>');
+            html = html.replace(/<p><ul>/g, '<ul>');
+            html = html.replace(/<\/ul><\/p>/g, '</ul>');
+            html = html.replace(/<p><ol>/g, '<ol>');
+            html = html.replace(/<\/ol><\/p>/g, '</ol>');
+            html = html.replace(/<p><pre>/g, '<pre>');
+            html = html.replace(/<\/pre><\/p>/g, '</pre>');
+            
+            // Tables (basic support)
+            html = html.replace(/\|([^|\n]+)\|([^|\n]+)\|([^|\n]+)\|/g, function(match, col1, col2, col3) {
+                return `<tr><td>${col1.trim()}</td><td>${col2.trim()}</td><td>${col3.trim()}</td></tr>`;
+            });
+            
+            if (html.includes('<tr>')) {
+                html = html.replace(/(<tr>.*<\/tr>)/s, '<table>$1</table>');
+            }
+            
+            return html;
+        }
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const fileItems = document.querySelectorAll('.file-item');
+            const folders = document.querySelectorAll('.folder');
+            
+            if (searchTerm === '') {
+                // Reset to default state when search is empty
+                fileItems.forEach(item => {
+                    item.style.display = 'flex';
+                });
+                // Restore original collapse state (only first folder expanded)
+                folders.forEach((folder, index) => {
+                    const fileList = folder.querySelector('.file-list');
+                    const titleDiv = folder.querySelector('.folder-title');
+                    const collapseIcon = titleDiv.querySelector('.collapse-icon');
+                    
+                    if (index === 0) {
+                        // Keep first folder expanded
+                        fileList.classList.remove('collapsed');
+                        titleDiv.classList.remove('collapsed');
+                        collapseIcon.classList.remove('collapsed');
+                    } else {
+                        // Collapse other folders
+                        fileList.classList.add('collapsed');
+                        titleDiv.classList.add('collapsed');
+                        collapseIcon.classList.add('collapsed');
+                    }
+                });
+            } else {
+                // Show matching items and expand their folders
+                folders.forEach(folder => {
+                    const fileList = folder.querySelector('.file-list');
+                    const titleDiv = folder.querySelector('.folder-title');
+                    const collapseIcon = titleDiv.querySelector('.collapse-icon');
+                    const folderFileItems = folder.querySelectorAll('.file-item');
+                    
+                    let hasVisibleItems = false;
+                    
+                    folderFileItems.forEach(item => {
+                        const text = item.textContent.toLowerCase();
+                        if (text.includes(searchTerm)) {
+                            item.style.display = 'flex';
+                            hasVisibleItems = true;
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                    
+                    // Expand folders that have matching items
+                    if (hasVisibleItems) {
+                        fileList.classList.remove('collapsed');
+                        titleDiv.classList.remove('collapsed');
+                        collapseIcon.classList.remove('collapsed');
+                    } else {
+                        fileList.classList.add('collapsed');
+                        titleDiv.classList.add('collapsed');
+                        collapseIcon.classList.add('collapsed');
+                    }
+                });
+            }
+        });
+
+        // Initialize the app
+        renderFileTree();
+    </script>
+</body>
+</html>
